@@ -10,7 +10,7 @@
   <meta name="author" content="IAnegocios.es" />
   <meta property="og:title" content="IA para Negocios - Automatización y Soluciones en España" />
   <meta property="og:description" content="Guías prácticas de IA para autónomos y pymes españolas. Automatización, herramientas y tutoriales reales." />
-  <meta property="og:url" content="https://negociosia.netlify.app/" />
+  <meta property="og:url" content="https://darribas953.github.io/ianegocios-web/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_ES" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -172,7 +172,7 @@
       <li><a href="#herramientas" onclick="navigate('home')">Herramientas</a></li>
       <li><a href="#articulos" onclick="navigate('home')">Artículos</a></li>
       <li><a href="#comparativas" onclick="navigate('home')">Comparativas</a></li>
-      <li><a href="#" onclick="navigate('page-sobre')">Sobre nosotros</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('sobre')">Sobre nosotros</a></li>
     </ul>
     <button class="nav-search-btn" onclick="focusSearch()" title="Buscar artículos">
       🔍
@@ -377,11 +377,11 @@
             <tr><th>Herramienta</th><th>Precio/mes</th><th>IA integrada</th><th>En español</th><th>Mejor para</th><th></th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Holded</strong></td><td>desde 14€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Autónomos y pymes</td><td><a href="https://www.holded.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
-            <tr><td><strong>Factorial HR</strong></td><td>desde 5€/empleado</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Gestión de equipos</td><td><a href="https://factorialhr.es" target="_blank" class="tool-link">Ver precio →</a></td></tr>
-            <tr><td><strong>Notion AI</strong></td><td>desde 8€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Proyectos y documentación</td><td><a href="https://notion.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://www.holded.com" target="_blank" style="color:var(--accent);">Holded</a></strong></td><td>desde 14€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Autónomos y pymes</td><td><a href="https://www.holded.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://factorialhr.es" target="_blank" style="color:var(--accent);">Factorial HR</a></strong></td><td>desde 5€/empleado</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Gestión de equipos</td><td><a href="https://factorialhr.es" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a></strong></td><td>desde 8€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Proyectos y documentación</td><td><a href="https://notion.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
             <tr><td><strong>Make</strong></td><td>Gratis / 9€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Automatización de procesos</td><td><a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" class="tool-link">Ver precio →</a></td></tr>
-            <tr><td><strong>Jasper AI</strong></td><td>desde 39€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Marketing y contenido</td><td><a href="https://www.jasper.ai" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://www.jasper.ai" target="_blank" style="color:var(--accent);">Jasper AI</a></strong></td><td>desde 39€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Marketing y contenido</td><td><a href="https://www.jasper.ai" target="_blank" class="tool-link">Ver precio →</a></td></tr>
             <tr><td><strong>HyNote AI</strong></td><td>Gratis / 20€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Reuniones y notas</td><td><a href="https://go.hynote.ai/6kgE2b" target="_blank" class="tool-link">Ver precio →</a></td></tr>
           </tbody>
         </table>
@@ -393,9 +393,9 @@
     <footer>
       <a href="#" class="footer-logo" onclick="showHome()">IA<span>negocios</span>.es</a>
       <ul class="footer-links">
-        <li><a href="#" onclick="showPage('sobre')">Sobre nosotros</a></li>
-        <li><a href="#" onclick="showPage('privacidad')">Política de privacidad</a></li>
-        <li><a href="#" onclick="showPage('afiliados')">Política de afiliados</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('sobre')">Sobre nosotros</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('privacidad')">Política de privacidad</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('afiliados')">Política de afiliados</a></li>
       </ul>
       <span class="footer-copy">© 2026 IAnegocios.es — Contenido independiente</span>
     </footer>
@@ -427,20 +427,20 @@
 
       <h2>Las mejores herramientas IA para inmobiliarias</h2>
 
-      <h3>1. ChatGPT / Claude — Redacción y atención al cliente</h3>
+      <h3>1. <a href="https://chatgpt.com" target="_blank" style="color:var(--accent);">ChatGPT</a> / <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> — Redacción y atención al cliente</h3>
       <p>Los grandes asistentes de IA son la herramienta más versátil para cualquier inmobiliaria. Puedes usarlos para redactar fichas de inmuebles en segundos, responder emails complejos, preparar guiones de llamada o crear contenido para redes sociales. <strong>Claude</strong> destaca especialmente para analizar documentos largos como contratos o escrituras.</p>
       <div class="article-cta-box">
         <p>Prueba Claude gratis para redactar tus fichas inmobiliarias y ahorra horas cada semana.</p>
         <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
       </div>
 
-      <h3>2. Tidio — Chatbot para tu web inmobiliaria</h3>
+      <h3>2. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — Chatbot para tu web inmobiliaria</h3>
       <p>Tidio es uno de los mejores chatbots con IA para webs inmobiliarias. Se instala en minutos, responde preguntas frecuentes automáticamente y captura los datos de contacto de los visitantes interesados, incluso a las 3 de la madrugada cuando tú no estás disponible. Su plan gratuito es suficiente para empezar.</p>
 
       <h3>3. Make — Automatización de procesos</h3>
       <p>Con Make puedes crear flujos de trabajo automáticos que conectan tu CRM, WhatsApp, email y portal inmobiliario. Por ejemplo: cuando alguien rellena un formulario en tu web, Make le envía automáticamente un WhatsApp de bienvenida, añade el contacto a tu CRM y te notifica a ti por email. Todo sin tocar nada.</p>
 
-      <h3>4. Canva AI — Materiales de marketing</h3>
+      <h3>4. <a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva AI</a> — Materiales de marketing</h3>
       <p>Canva tiene integrada IA generativa que permite crear presentaciones de inmuebles, flyers, posts para redes sociales y vídeos de forma muy rápida. El resultado es profesional sin necesidad de diseñador.</p>
 
       <h3>5. Lofty (antes Chime) — CRM inmobiliario con IA</h3>
@@ -481,13 +481,13 @@
       <h3>1. WhatsApp Business (gratis) — El punto de partida</h3>
       <p>Si todavía usas WhatsApp personal para tu negocio, el primer paso es pasarte a <strong>WhatsApp Business</strong>. Es gratis y permite configurar respuestas automáticas básicas: mensaje de bienvenida, mensaje de ausencia y respuestas rápidas para preguntas frecuentes. No es IA, pero es el punto de partida obligatorio.</p>
 
-      <h3>2. Tidio — Chatbot con IA conectado a WhatsApp</h3>
+      <h3>2. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — Chatbot con IA conectado a WhatsApp</h3>
       <p>Tidio permite conectar un chatbot con IA a tu WhatsApp Business. El bot puede responder preguntas frecuentes, recopilar datos de clientes, mostrar catálogos de productos y escalar la conversación a un humano cuando sea necesario. El plan básico es gratuito.</p>
 
       <h3>3. Make + WhatsApp Business API — Automatización avanzada</h3>
       <p>Para negocios con más volumen, la combinación de Make con la API oficial de WhatsApp Business es la solución más potente. Permite crear flujos como: cliente envía mensaje → IA clasifica la consulta → responde automáticamente o crea una tarea en tu CRM → te notifica si necesita atención humana. Requiere algo más de configuración pero es muy escalable.</p>
 
-      <h3>4. Manychat — Marketing por WhatsApp</h3>
+      <h3>4. <a href="https://manychat.com" target="_blank" style="color:var(--accent);">Manychat</a> — Marketing por WhatsApp</h3>
       <p>Manychat es la herramienta líder para automatizar campañas de marketing por WhatsApp. Permite enviar mensajes masivos personalizados, crear secuencias de seguimiento automático y conectar con tu tienda online para notificaciones de pedidos y carritos abandonados.</p>
 
       <div class="article-cta-box">
@@ -536,16 +536,16 @@
         <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
       </div>
 
-      <h2>2. Gemini Advanced (Google) — La mejor integración con herramientas Google</h2>
+      <h2>2. <a href="https://gemini.google.com" target="_blank" style="color:var(--accent);">Gemini Advanced</a> (Google) — La mejor integración con herramientas Google</h2>
       <p>Si tu empresa trabaja con Google Workspace (Gmail, Drive, Docs, Sheets), Gemini Advanced es la opción más natural. Se integra directamente en todas las apps de Google, permite resumir emails, analizar hojas de cálculo y redactar documentos sin salir de las herramientas que ya usas. Cuesta 22€/mes e incluye acceso a Google One.</p>
 
-      <h2>3. Microsoft Copilot — La mejor opción para usuarios de Microsoft 365</h2>
+      <h2>3. <a href="https://copilot.microsoft.com" target="_blank" style="color:var(--accent);">Microsoft Copilot</a> — La mejor opción para usuarios de Microsoft 365</h2>
       <p>Si tu empresa usa Office 365, Teams y Outlook, Microsoft Copilot Pro es la alternativa más lógica. Está integrado en Word, Excel, PowerPoint y Teams, y permite generar documentos, resumir reuniones y analizar datos directamente en las herramientas de trabajo. El precio es de 22€/mes por usuario.</p>
 
-      <h2>4. Mistral Le Chat — La alternativa europea y gratuita</h2>
+      <h2>4. <a href="https://chat.mistral.ai" target="_blank" style="color:var(--accent);">Mistral Le Chat</a> — La alternativa europea y gratuita</h2>
       <p>Mistral es una empresa francesa y Le Chat es su asistente de IA. La gran ventaja es que los datos se procesan en Europa, lo que facilita el cumplimiento del RGPD. El plan gratuito es competitivo y para empresas con requisitos de privacidad estrictos puede ser la mejor opción. Tiene también planes empresariales con modelos desplegables en infraestructura propia.</p>
 
-      <h2>5. Perplexity — La mejor para búsqueda e investigación</h2>
+      <h2>5. <a href="https://perplexity.ai" target="_blank" style="color:var(--accent);">Perplexity</a> — La mejor para búsqueda e investigación</h2>
       <p>Perplexity no es exactamente un asistente de chat, sino un motor de búsqueda con IA que cita sus fuentes. Para equipos que necesitan investigar temas, seguir noticias del sector o verificar información de forma rápida, Perplexity es muy superior a ChatGPT. El plan Pro cuesta 17€/mes.</p>
 
       <h2>Tabla comparativa rápida</h2>
@@ -587,16 +587,16 @@
 
       <h2>Paso 3: Las mejores herramientas de IA para atención al cliente</h2>
 
-      <h3>Tidio — Para webs y tiendas online</h3>
+      <h3><a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — Para webs y tiendas online</h3>
       <p>Tidio combina chatbot con IA y chat en vivo en una sola plataforma. El bot responde automáticamente las preguntas frecuentes y escala a un agente humano cuando la consulta es compleja. Se integra con Shopify, WooCommerce y las principales plataformas de ecommerce. Plan gratuito disponible.</p>
 
-      <h3>Intercom — Para empresas con mayor volumen</h3>
+      <h3><a href="https://intercom.com" target="_blank" style="color:var(--accent);">Intercom</a> — Para empresas con mayor volumen</h3>
       <p>Intercom es la plataforma de atención al cliente con IA más completa del mercado. Su IA, llamada Fin, puede resolver consultas complejas con un nivel de precisión muy alto. Es más cara (desde 39€/mes) pero el retorno de inversión es rápido para empresas con alto volumen de consultas.</p>
 
-      <h3>Notion AI + email — Para gestión interna</h3>
+      <h3><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a> + email — Para gestión interna</h3>
       <p>Si tu equipo de soporte recibe muchos emails, Notion AI puede ayudar a clasificarlos, redactar respuestas tipo y mantener una base de conocimiento actualizada que sirva de referencia para el equipo.</p>
 
-      <h3>Claude API — Para soluciones personalizadas</h3>
+      <h3><a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude API</a> — Para soluciones personalizadas</h3>
       <p>Si tienes un desarrollador en el equipo o presupuesto para contratar uno, integrar la API de Claude en tu sistema de atención al cliente es la opción más potente. Permite crear un asistente entrenado específicamente con el conocimiento de tu empresa, productos y políticas.</p>
 
       <div class="article-cta-box">
@@ -776,7 +776,7 @@
       <p>Importante: la IA comete errores y alucina datos. Nunca usar un documento generado por IA sin revisión exhaustiva del profesional.</p>
 
       <h3>4. Gestión y organización de expedientes</h3>
-      <p>Herramientas como <strong>Notion AI</strong> permiten crear bases de datos de expedientes inteligentes donde la IA puede buscar información, resumir el estado de cada caso, generar cronologías automáticas y recordar plazos procesales. Para despachos con muchos asuntos activos, esto es un cambio radical en la organización.</p>
+      <p>Herramientas como <strong><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a></strong> permiten crear bases de datos de expedientes inteligentes donde la IA puede buscar información, resumir el estado de cada caso, generar cronologías automáticas y recordar plazos procesales. Para despachos con muchos asuntos activos, esto es un cambio radical en la organización.</p>
 
       <h3>5. Atención al cliente y comunicaciones</h3>
       <p>Muchos despachos usan ya chatbots con IA en su web para responder preguntas frecuentes, cualificar consultas iniciales y gestionar la agenda de primeras visitas. Esto libera tiempo de recepción y mejora la experiencia del potencial cliente que busca información fuera del horario de oficina.</p>
@@ -821,7 +821,7 @@
       <p>Antes de generar nada, define con claridad: ¿a quién te diriges?, ¿qué problema resuelves?, ¿qué tono quieres usar? Puedes usar Claude o ChatGPT para ayudarte a definir tu estrategia: pídele que te genere un calendario de contenidos mensual para tu tipo de negocio, con categorías de contenido variadas (educativo, inspiracional, promocional, entretenimiento).</p>
 
       <h3>Paso 2: Generar los textos con IA</h3>
-      <p><strong>Claude</strong> y <strong>Jasper AI</strong> son las mejores herramientas para redactar posts. La clave es dar contexto detallado: tu negocio, tu audiencia, el tono que quieres y el objetivo del post. Cuanto más específico seas, mejor será el resultado.</p>
+      <p><strong>Claude</strong> y <strong><a href="https://www.jasper.ai" target="_blank" style="color:var(--accent);">Jasper AI</a></strong> son las mejores herramientas para redactar posts. La clave es dar contexto detallado: tu negocio, tu audiencia, el tono que quieres y el objetivo del post. Cuanto más específico seas, mejor será el resultado.</p>
       <p>Un buen prompt para generar posts: "Soy dueño de una clínica dental en Madrid. Escríbeme 5 posts para Instagram con tono cercano y profesional, uno educativo sobre higiene dental, uno con un mito frecuente, uno con un antes/después (sin imágenes), uno de testimonio ficticio y uno promocional para el mes de mayo."</p>
       <div class="article-cta-box">
         <p>Claude genera posts para redes sociales con tono natural y adaptado a tu negocio. Pruébalo gratis.</p>
@@ -829,10 +829,10 @@
       </div>
 
       <h3>Paso 3: Crear las imágenes con IA</h3>
-      <p><strong>Canva</strong> tiene IA integrada que permite generar imágenes, modificar fotos y crear diseños profesionales sin ser diseñador. Para posts con texto e imagen, Canva es la solución más práctica para negocios españoles. También puedes usar <strong>Adobe Firefly</strong> para imágenes más elaboradas.</p>
+      <p><strong><a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva</a></strong> tiene IA integrada que permite generar imágenes, modificar fotos y crear diseños profesionales sin ser diseñador. Para posts con texto e imagen, Canva es la solución más práctica para negocios españoles. También puedes usar <strong>Adobe Firefly</strong> para imágenes más elaboradas.</p>
 
       <h3>Paso 4: Programar la publicación automáticamente</h3>
-      <p>Herramientas como <strong>Buffer</strong> o <strong>Metricool</strong> (esta última española y muy popular) permiten programar posts en todas las redes sociales desde un solo lugar. Puedes preparar un mes entero de contenido en una tarde y programarlo todo para que se publique automáticamente.</p>
+      <p>Herramientas como <strong><a href="https://buffer.com" target="_blank" style="color:var(--accent);">Buffer</a></strong> o <strong><a href="https://metricool.com" target="_blank" style="color:var(--accent);">Metricool</a></strong> (esta última española y muy popular) permiten programar posts en todas las redes sociales desde un solo lugar. Puedes preparar un mes entero de contenido en una tarde y programarlo todo para que se publique automáticamente.</p>
 
       <h3>Paso 5: Automatizar el flujo completo con Make</h3>
       <p>Para el nivel más avanzado, <strong>Make</strong> permite crear un flujo donde añades ideas a una hoja de cálculo, la IA genera el texto automáticamente y lo programa en Buffer para publicación. El proceso de creación pasa de horas a minutos.</p>
@@ -890,10 +890,10 @@
         <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
       </div>
 
-      <h3>2. Tidio — Chatbot con IA para tu tienda</h3>
+      <h3>2. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — Chatbot con IA para tu tienda</h3>
       <p>Tidio se integra con Shopify y WooCommerce y permite desplegar un chatbot con IA que responde preguntas sobre productos, estado de pedidos, política de devoluciones y disponibilidad de stock. Reduce el volumen de emails de soporte en más de un 50% en la mayoría de tiendas que lo implementan. El plan básico es gratuito.</p>
 
-      <h3>3. Klaviyo con IA — Email marketing personalizado</h3>
+      <h3>3. <a href="https://klaviyo.com" target="_blank" style="color:var(--accent);">Klaviyo con IA</a> — Email marketing personalizado</h3>
       <p>Klaviyo es la plataforma de email marketing más usada en ecommerce, y en 2025 integró IA para generar automáticamente el contenido de los emails, segmentar audiencias y predecir el mejor momento para enviar. Sus flujos automáticos de carrito abandonado con texto generado por IA tienen tasas de recuperación muy superiores a los genéricos.</p>
 
       <h3>4. Make — Automatización del backend</h3>
@@ -903,10 +903,10 @@
         <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar con Make gratis →</a>
       </div>
 
-      <h3>5. Nosto — Personalización del ecommerce con IA</h3>
+      <h3>5. <a href="https://nosto.com" target="_blank" style="color:var(--accent);">Nosto</a> — Personalización del ecommerce con IA</h3>
       <p>Nosto es una plataforma especializada en personalización para ecommerce. Usa IA para mostrar a cada visitante los productos más relevantes según su comportamiento, historial de compras y perfil. Compatible con Shopify, Magento y WooCommerce. Las tiendas que lo implementan reportan incrementos de conversión del 15-30%.</p>
 
-      <h3>6. Canva AI — Imágenes de producto y creatividades</h3>
+      <h3>6. <a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva AI</a> — Imágenes de producto y creatividades</h3>
       <p>Para tiendas que necesitan producir muchas creatividades para anuncios, redes sociales y banners, Canva con IA permite generar y adaptar imágenes de producto de forma rápida sin necesidad de fotógrafo ni diseñador para cada variación.</p>
 
       <h2>Flujo de trabajo recomendado para una tienda online con IA</h2>
@@ -1038,10 +1038,10 @@
         <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
       </div>
 
-      <h3>2. Jasper AI — Especializado en marketing</h3>
+      <h3>2. <a href="https://jasper.ai" target="_blank" style="color:var(--accent);">Jasper AI</a> — Especializado en marketing</h3>
       <p>Jasper está entrenado específicamente para marketing y tiene plantillas prediseñadas para cada tipo de post: Instagram, LinkedIn, Twitter, Facebook. También incluye un verificador de tono para asegurarte de que el contenido encaja con tu marca. Es de pago pero tiene prueba gratuita.</p>
 
-      <h3>3. Canva AI — Para los visuales</h3>
+      <h3>3. <a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva AI</a> — Para los visuales</h3>
       <p>El texto es solo la mitad del contenido. Canva con IA genera diseños para posts, stories y reels en segundos a partir de una descripción. Puedes crear plantillas de marca y generar variaciones automáticamente para distintos formatos.</p>
 
       <h3>4. Make — Para automatizar la publicación</h3>
@@ -1051,7 +1051,7 @@
         <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar con Make gratis →</a>
       </div>
 
-      <h3>5. Metricool — Programación y análisis</h3>
+      <h3>5. <a href="https://metricool.com" target="_blank" style="color:var(--accent);">Metricool</a> — Programación y análisis</h3>
       <p>Metricool es una herramienta española que combina programación de contenido con análisis de resultados. Tiene IA integrada para sugerir los mejores horarios de publicación y analizar qué tipo de contenido funciona mejor con tu audiencia.</p>
 
       <h2>Cómo crear un mes de contenido en una tarde</h2>
@@ -1247,7 +1247,7 @@
 
       <h2>Las mejores VPN para empresas en 2026</h2>
 
-      <h3>1. NordVPN Teams — La mejor opción para pymes</h3>
+      <h3>1. <a href="https://nordvpn.com/teams/" target="_blank" style="color:var(--accent);">NordVPN Teams</a> — La mejor opción para pymes</h3>
       <p>NordVPN es la VPN más conocida del mundo y su versión para empresas, NordVPN Teams, es la opción más equilibrada para pymes y autónomos españoles. Ofrece servidores en más de 60 países, cifrado de grado militar, política estricta de no registros verificada por auditorías independientes y una aplicación muy sencilla de usar para empleados sin conocimientos técnicos.</p>
       <p>Su panel de administración centralizado permite gestionar todos los usuarios de la empresa desde un solo lugar, activar y desactivar accesos fácilmente y monitorizar las conexiones. El precio por usuario es muy competitivo, especialmente para equipos de más de 5 personas.</p>
       <div class="article-cta-box">
@@ -1255,16 +1255,16 @@
         <a href="https://nordvpn.com/teams/" target="_blank">Ver planes de NordVPN Teams →</a>
       </div>
 
-      <h3>2. ExpressVPN — La más rápida</h3>
+      <h3>2. <a href="https://expressvpn.com" target="_blank" style="color:var(--accent);">ExpressVPN</a> — La más rápida</h3>
       <p>ExpressVPN destaca por ser la VPN con mayor velocidad del mercado, lo que la hace ideal para empresas que necesitan transferir archivos grandes, hacer videollamadas de alta calidad o trabajar con aplicaciones en la nube que requieren baja latencia. Tiene servidores en más de 94 países y una política de no registros auditada. Es algo más cara que NordVPN pero justificada si la velocidad es prioritaria.</p>
 
-      <h3>3. Surfshark — La mejor relación calidad-precio</h3>
+      <h3>3. <a href="https://surfshark.com" target="_blank" style="color:var(--accent);">Surfshark</a> — La mejor relación calidad-precio</h3>
       <p>Surfshark permite conexiones simultáneas ilimitadas con una sola suscripción, lo que la hace especialmente atractiva para empresas con muchos dispositivos. A diferencia de NordVPN y ExpressVPN, no cobra por usuario sino por cuenta, lo que puede suponer un ahorro significativo. Su función Surfshark Alert avisa cuando las credenciales de tu empresa aparecen en filtraciones de datos.</p>
 
-      <h3>4. Cisco AnyConnect — Para grandes empresas</h3>
+      <h3>4. <a href="https://cisco.com" target="_blank" style="color:var(--accent);">Cisco AnyConnect</a> — Para grandes empresas</h3>
       <p>Para empresas medianas y grandes con departamento IT propio, Cisco AnyConnect es el estándar del sector. Ofrece el mayor nivel de control y personalización, integración con sistemas empresariales existentes y soporte técnico de nivel corporativo. Es considerablemente más cara y compleja que las opciones anteriores, pero es la solución más robusta para organizaciones grandes.</p>
 
-      <h3>5. Proton VPN — La más privada</h3>
+      <h3>5. <a href="https://protonvpn.com" target="_blank" style="color:var(--accent);">Proton VPN</a> — La más privada</h3>
       <p>Proton VPN es desarrollada por los creadores de ProtonMail, el servicio de email cifrado suizo. Su enfoque es la privacidad absoluta: código abierto, auditado independientemente y con sede en Suiza, fuera de la jurisdicción de la UE y EEUU. Ideal para despachos de abogados, consultoras financieras o cualquier empresa que maneje información especialmente sensible. Tiene plan gratuito limitado y planes de pago muy competitivos.</p>
 
       <h2>Comparativa rápida</h2>
@@ -1403,7 +1403,7 @@
       <h2>El flujo de automatización completo</h2>
 
       <h3>Automatización 1 — Recogida de documentación automática</h3>
-      <p>En vez de enviar emails manualmente pidiendo documentación, configura un formulario en <strong>Tally</strong> (gratuito) donde el cliente sube directamente sus facturas, nóminas o lo que necesites. <strong>Make</strong> recoge esos documentos automáticamente, los guarda en la carpeta correcta de Google Drive con el nombre y fecha del cliente, y te notifica cuando están listos.</p>
+      <p>En vez de enviar emails manualmente pidiendo documentación, configura un formulario en <strong><a href="https://tally.so" target="_blank" style="color:var(--accent);">Tally</a></strong> (gratuito) donde el cliente sube directamente sus facturas, nóminas o lo que necesites. <strong>Make</strong> recoge esos documentos automáticamente, los guarda en la carpeta correcta de Google Drive con el nombre y fecha del cliente, y te notifica cuando están listos.</p>
       <p>Si el cliente no ha enviado la documentación en X días, Make le manda automáticamente un recordatorio por email o WhatsApp. Sin que tú tengas que acordarte.</p>
 
       <h3>Automatización 2 — Extracción de datos de facturas</h3>
@@ -1622,7 +1622,7 @@
       <ul>
         <li><strong>HyNote</strong> → mejor para transcripción de reuniones, multiidioma, sin bot intrusivo</li>
         <li><strong>Otter.ai</strong> → mejor para reuniones en inglés con integración nativa en Zoom</li>
-        <li><strong>Notion AI</strong> → mejor si ya usas Notion y quieres IA dentro de tu sistema de notas existente</li>
+        <li><strong><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a></strong> → mejor si ya usas Notion y quieres IA dentro de tu sistema de notas existente</li>
       </ul>
 
       <h2>HyNote AI — El más completo para profesionales españoles</h2>
@@ -1700,7 +1700,7 @@
       <h2>Las 5 áreas donde la IA transforma un restaurante</h2>
 
       <h3>1. Gestión de reservas automática</h3>
-      <p>Recibir reservas por teléfono tiene un coste oculto enorme: alguien tiene que estar disponible para coger el teléfono, apuntar los datos, confirmar disponibilidad y llamar si hay cancelaciones. Con herramientas como <strong>TheFork Manager</strong> o <strong>Covermanager</strong> combinadas con WhatsApp automatizado, todo ese proceso ocurre solo.</p>
+      <p>Recibir reservas por teléfono tiene un coste oculto enorme: alguien tiene que estar disponible para coger el teléfono, apuntar los datos, confirmar disponibilidad y llamar si hay cancelaciones. Con herramientas como <strong><a href="https://thefork.es" target="_blank" style="color:var(--accent);">TheFork Manager</a></strong> o <strong><a href="https://covermanager.com" target="_blank" style="color:var(--accent);">Covermanager</a></strong> combinadas con WhatsApp automatizado, todo ese proceso ocurre solo.</p>
       <p>El flujo concreto: cliente envía WhatsApp pidiendo mesa → bot responde con disponibilidad en tiempo real → cliente elige horario → confirmación automática → recordatorio 24 horas antes → si cancela, la mesa vuelve a estar disponible automáticamente. Sin que nadie del restaurante haya intervenido.</p>
       <p>Puedes montar este flujo con <strong>Make</strong> conectando tu sistema de reservas con WhatsApp Business API por unos 15-20€/mes en total.</p>
 
@@ -1710,19 +1710,19 @@
       </div>
 
       <h3>2. Carta digital con IA y actualización automática</h3>
-      <p>Una carta digital bien implementada no es solo un PDF en un código QR. Con herramientas como <strong>Menuu</strong> o <strong>Flipdish</strong>, la carta se actualiza en tiempo real desde el móvil, puede mostrar alérgenos automáticamente, ocultar platos agotados y sugerir maridajes o complementos usando IA.</p>
+      <p>Una carta digital bien implementada no es solo un PDF en un código QR. Con herramientas como <strong>Menuu</strong> o <strong><a href="https://flipdish.com" target="_blank" style="color:var(--accent);">Flipdish</a></strong>, la carta se actualiza en tiempo real desde el móvil, puede mostrar alérgenos automáticamente, ocultar platos agotados y sugerir maridajes o complementos usando IA.</p>
       <p>El impacto en el ticket medio es real: los restaurantes que usan sugerencias automáticas en carta digital reportan aumentos del 10-20% en el ticket promedio, porque la IA sugiere postres, bebidas o entrantes en el momento adecuado.</p>
 
       <h3>3. Atención al cliente 24/7 en WhatsApp e Instagram</h3>
       <p>El 60% de las consultas que recibe un restaurante son siempre las mismas: horario, dirección, si hay terraza, si admiten perros, si hay menú del día, si pueden ir con niños. Un chatbot con IA responde todo eso al instante, a cualquier hora, sin que nadie del equipo tenga que hacerlo.</p>
-      <p><strong>Tidio</strong> permite montar este chatbot en la web del restaurante de forma gratuita. Para WhatsApp e Instagram necesitas conectarlo con Make o con Manychat, que tienen planes desde 15€/mes.</p>
+      <p><strong><a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a></strong> permite montar este chatbot en la web del restaurante de forma gratuita. Para WhatsApp e Instagram necesitas conectarlo con Make o con Manychat, que tienen planes desde 15€/mes.</p>
 
       <h3>4. Gestión de reseñas con IA</h3>
       <p>Responder reseñas en Google Maps, TripAdvisor y TheFork es fundamental para el posicionamiento local, pero consume tiempo. Con <strong>Claude</strong> o <strong>ChatGPT</strong> puedes generar respuestas personalizadas para cada reseña en segundos, adaptando el tono según si es positiva, neutra o negativa.</p>
       <p>Un paso más avanzado: Make puede detectar cuando llega una reseña nueva y notificarte al instante con un borrador de respuesta ya generado por IA. Solo tienes que revisarlo y publicarlo.</p>
 
       <h3>5. Marketing y redes sociales automatizados</h3>
-      <p>Publicar el menú del día en Instagram cada mañana, anunciar eventos especiales o compartir fotos de platos lleva tiempo que no siempre hay. Con <strong>Jasper</strong> o <strong>Claude</strong> puedes generar los textos en segundos, y con <strong>Metricool</strong> programar las publicaciones de toda la semana en una sola sesión de 30 minutos.</p>
+      <p>Publicar el menú del día en Instagram cada mañana, anunciar eventos especiales o compartir fotos de platos lleva tiempo que no siempre hay. Con <strong>Jasper</strong> o <strong>Claude</strong> puedes generar los textos en segundos, y con <strong><a href="https://metricool.com" target="_blank" style="color:var(--accent);">Metricool</a></strong> programar las publicaciones de toda la semana en una sola sesión de 30 minutos.</p>
 
       <h2>Flujo de trabajo completo para un restaurante con IA</h2>
       <ol>
@@ -1771,7 +1771,7 @@
       <p>En este tutorial montamos el flujo completo con Make y Holded, las dos herramientas más usadas para esto en España.</p>
 
       <h2>Por qué Make + Holded es la mejor combinación para España</h2>
-      <p><strong>Holded</strong> es el software de gestión empresarial español más popular entre autónomos y pymes. Incluye facturación, contabilidad, CRM y control de proyectos, cumple con todos los requisitos fiscales españoles y tiene una API robusta que Make puede usar para automatizar cualquier acción.</p>
+      <p><strong><a href="https://www.holded.com" target="_blank" style="color:var(--accent);">Holded</a></strong> es el software de gestión empresarial español más popular entre autónomos y pymes. Incluye facturación, contabilidad, CRM y control de proyectos, cumple con todos los requisitos fiscales españoles y tiene una API robusta que Make puede usar para automatizar cualquier acción.</p>
       <p><strong>Make</strong> actúa como el conector inteligente: detecta cuándo ocurre algo en cualquier otra herramienta (nuevo cliente en tu CRM, proyecto completado, pago recibido) y ejecuta automáticamente las acciones correspondientes en Holded.</p>
 
       <div class="article-cta-box">
