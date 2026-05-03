@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA para Negocios - Automatización y Soluciones en España | IAnegocios</title>
+  <meta name="description" content="Descubre cómo la IA y herramientas como Make, HyNote o NordVPN pueden transformar tu negocio en España. Guías prácticas sobre automatización, gestión y seguridad digital para autónomos y pymes." />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Spanish" />
+  <meta name="author" content="IAnegocios.es" />
+  <meta property="og:title" content="IA para Negocios - Automatización y Soluciones en España" />
+  <meta property="og:description" content="Guías prácticas de IA para autónomos y pymes españolas. Automatización, herramientas y tutoriales reales." />
+  <meta property="og:url" content="https://darribas953.github.io/ianegocios-web/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a08; --bg2: #111110; --bg3: #1a1a17;
+      --accent: #d4f54a; --accent2: #f5e44a;
+      --text: #f0ede4; --muted: #888880; --border: #2a2a26;
+      --font-head: 'Syne', sans-serif; --font-body: 'Lora', serif;
+    }
+    html { scroll-behavior: smooth; }
+    :target { scroll-margin-top: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.7; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4vw; background: rgba(10,10,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-family: var(--font-head); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4vw 4rem; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(212,245,74,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(245,228,74,0.04) 0%, transparent 60%); pointer-events: none; }
+    .hero-tag { display: inline-block; font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.3rem 0.8rem; margin-bottom: 2rem; width: fit-content; animation: fadeUp 0.6s ease both; }
+    .hero h1 { font-family: var(--font-head); font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; max-width: 900px; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero h1 em { font-style: italic; font-family: var(--font-body); color: var(--accent); font-weight: 400; }
+    .hero-sub { margin-top: 1.5rem; font-size: 1.1rem; color: var(--muted); max-width: 520px; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+    .btn-primary { background: var(--accent); color: var(--bg); padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,245,74,0.3); }
+    .btn-ghost { background: transparent; color: var(--text); padding: 0.85rem 2rem; font-family: var(--font-head); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats { margin-top: 5rem; display: flex; gap: 3rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.4s ease both; }
+    .stat { border-left: 2px solid var(--accent); padding-left: 1rem; }
+    .stat-num { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+    section { padding: 6rem 4vw; }
+    .section-tag { font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; }
+    .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .tool-card { background: var(--bg2); padding: 2rem; transition: background 0.2s; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+    .tool-card:hover { background: var(--bg3); }
+    .tool-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .tool-icon { width: 42px; height: 42px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .tool-badge { font-family: var(--font-head); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; }
+    .badge-free { background: rgba(212,245,74,0.1); color: var(--accent); }
+    .badge-paid { background: rgba(245,228,74,0.1); color: var(--accent2); }
+    .badge-freemium { background: rgba(255,255,255,0.05); color: var(--muted); }
+    .tool-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .tool-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+    .tool-meta { margin-top: 1.2rem; display: flex; align-items: center; gap: 1rem; font-family: var(--font-head); font-size: 0.75rem; color: var(--muted); }
+    .tool-rating { color: var(--accent); font-weight: 700; }
+    .tool-arrow { margin-left: auto; color: var(--border); font-size: 1.2rem; transition: color 0.2s, transform 0.2s; }
+    .tool-card:hover .tool-arrow { color: var(--accent); transform: translateX(4px); }
+    .articles-bg { background: var(--bg2); }
+    .articles-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+    .article-featured { border: 1px solid var(--border); padding: 2.5rem; background: var(--bg); position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: border-color 0.2s; cursor: pointer; }
+    .article-featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .article-featured:hover { border-color: var(--accent); }
+    .article-cat { font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .article-title { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; }
+    .article-excerpt { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+    .article-meta { margin-top: 1.5rem; font-family: var(--font-head); font-size: 0.75rem; color: var(--muted); display: flex; gap: 1rem; }
+    .articles-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .article-small { background: var(--bg); padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: background 0.2s; cursor: pointer; }
+    .article-small:hover { background: var(--bg3); }
+    .article-small .article-cat { margin-bottom: 0.5rem; }
+    .article-small-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.5rem; }
+    .article-small-meta { font-family: var(--font-head); font-size: 0.7rem; color: var(--muted); }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .compare-table th { font-family: var(--font-head); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 1rem 1.5rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .compare-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border); color: var(--text); }
+    .compare-table tr:hover td { background: var(--bg3); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: var(--muted); }
+    .tool-link { color: var(--accent); text-decoration: none; font-family: var(--font-head); font-weight: 700; font-size: 0.8rem; }
+    .newsletter { background: var(--bg3); border: 1px solid var(--border); padding: 4rem; text-align: center; position: relative; overflow: hidden; }
+    .newsletter::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,245,74,0.05) 0%, transparent 70%); pointer-events: none; }
+    .newsletter h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+    .newsletter p { color: var(--muted); margin-bottom: 2rem; }
+    .newsletter-form { display: flex; gap: 0; max-width: 440px; margin: 0 auto; }
+    .newsletter-input { flex: 1; background: var(--bg); border: 1px solid var(--border); border-right: none; color: var(--text); padding: 0.85rem 1.2rem; font-family: var(--font-body); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .newsletter-input:focus { border-color: var(--accent); }
+    .newsletter-input::placeholder { color: var(--muted); }
+    footer { border-top: 1px solid var(--border); padding: 3rem 4vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--font-head); font-weight: 800; font-size: 1rem; color: var(--text); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-family: var(--font-head); font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; font-family: var(--font-head); }
+    .uniform-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); }
+    .ucard { background: var(--bg); padding: 2rem; cursor: pointer; transition: background 0.2s; display: flex; flex-direction: column; gap: 0.6rem; }
+    .ucard:hover { background: var(--bg3); }
+    .ucard-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; line-height: 1.3; color: var(--text); }
+    .ucard-excerpt { font-size: 0.88rem; color: var(--muted); line-height: 1.5; flex: 1; }
+    .ucard-meta { font-family: var(--font-head); font-size: 0.7rem; color: var(--muted); display: flex; gap: 0.5rem; margin-top: auto; }
+
+    /* SEARCH */
+    .search-wrap { position: relative; margin-bottom: 2rem; }
+    .search-input { width: 100%; background: var(--bg2); border: 1px solid var(--border); color: var(--text); padding: 0.9rem 1rem 0.9rem 3rem; font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+    .search-input:focus { border-color: var(--accent); }
+    .search-input::placeholder { color: var(--muted); }
+    .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+    .search-clear { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); cursor: pointer; display: none; background: none; border: none; }
+    .search-clear.visible { display: block; }
+    .search-results-count { font-family: var(--font-head); font-size: 0.75rem; color: var(--muted); margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .ucard.hidden { display: none; }
+    .no-results { font-family: var(--font-head); color: var(--muted); text-align: center; padding: 3rem; font-size: 0.9rem; display: none; }
+    .no-results.visible { display: block; }
+
+    /* NAV SEARCH BUTTON */
+    .nav-search-btn { background: none; border: none; color: var(--muted); cursor: pointer; display: flex; align-items: center; transition: color 0.2s; padding: 0.3rem; }
+    .nav-search-btn:hover { color: var(--accent); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .divider { height: 1px; background: var(--border); margin: 0 4vw; }
+
+    #home { display: block; }
+    .article-page { display: none; }
+    .article-page.active { display: block; }
+    .article-page.active { display: block; }
+    .article-back { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; color: var(--muted); text-decoration: none; cursor: pointer; margin-bottom: 2rem; transition: color 0.2s; background: none; border: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .article-back:hover { color: var(--accent); }
+    .article-header { max-width: 780px; margin: 0 auto 3rem; }
+    .article-header .article-cat { margin-bottom: 1rem; }
+    .article-header h1 { font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.2rem; }
+    .article-header .article-meta { margin-top: 1rem; }
+    .article-body { max-width: 780px; margin: 0 auto; }
+    .article-body h2 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin: 2.5rem 0 1rem; color: var(--text); }
+    .article-body h3 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.8rem; color: var(--accent); }
+    .article-body p { margin-bottom: 1.3rem; color: var(--text); }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; color: var(--text); }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body strong { color: var(--accent); font-weight: 700; }
+    .article-cta-box { background: var(--bg3); border: 1px solid var(--accent); padding: 2rem; margin: 2.5rem 0; }
+    .article-cta-box p { margin: 0 0 1rem; }
+    .article-cta-box a { display: inline-block; background: var(--accent); color: var(--bg); padding: 0.7rem 1.5rem; font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; }
+    .article-divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .newsletter { padding: 2.5rem 1.5rem; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-input { border-right: 1px solid var(--border); border-bottom: none; }
+      .hero-stats { gap: 1.5rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo" onclick="navigate('home')">IA<span>negocios</span>.es</a>
+    <ul class="nav-links">
+      <li><a href="#herramientas" onclick="navigate('home')">Herramientas</a></li>
+      <li><a href="#articulos" onclick="navigate('home')">Artículos</a></li>
+      <li><a href="#comparativas" onclick="navigate('home')">Comparativas</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('sobre')">Sobre nosotros</a></li>
+    </ul>
+    <button class="nav-search-btn" onclick="focusSearch()" title="Buscar artículos">
+      🔍
+    </button>
+  </nav>
+
+  <!-- HOME -->
+  <div id="home">
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-tag">Actualizado mayo 2026</div>
+      <h1>Las mejores herramientas <em>IA</em> para tu negocio</h1>
+      <p class="hero-sub">Comparativas honestas, guías prácticas y reviews actualizadas de herramientas de inteligencia artificial para autónomos y empresas en España.</p>
+      <div class="hero-cta">
+        <a href="#herramientas" class="btn-primary">Ver herramientas</a>
+        <a href="#articulos" class="btn-ghost">Leer guías</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">17</div><div class="stat-label">Guías publicadas</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Contenido independiente</div></div>
+        <div class="stat"><div class="stat-num">Gratis</div><div class="stat-label">Siempre sin coste para ti</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="herramientas">
+      <div class="section-tag">Herramientas destacadas</div>
+      <h2 class="section-title">Las más usadas por empresas españolas</h2>
+      <p class="section-sub">Selección actualizada con las herramientas IA que están transformando la productividad de negocios en España.</p>
+      <div class="tools-grid">
+        <a href="https://www.holded.com" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">🏢</div><span class="tool-badge badge-paid">De pago</span></div>
+          <div class="tool-name">Holded</div>
+          <div class="tool-desc">Software de gestión empresarial español con IA. Facturación, contabilidad y CRM integrados. Ideal para autónomos y pymes.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 9.0</span><span>Gestión empresarial</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://factorialhr.es" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">👥</div><span class="tool-badge badge-paid">De pago</span></div>
+          <div class="tool-name">Factorial HR</div>
+          <div class="tool-desc">Software de RRHH con IA para empresas españolas. Gestión de nóminas, vacaciones y rendimiento de empleados automatizada.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 8.7</span><span>Recursos Humanos</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://notion.com" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">📋</div><span class="tool-badge badge-freemium">Freemium</span></div>
+          <div class="tool-name">Notion AI</div>
+          <div class="tool-desc">Gestión de proyectos con IA integrada. Resúmenes automáticos, redacción de informes y organización inteligente de tu equipo.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 8.9</span><span>Gestión de proyectos</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">⚡</div><span class="tool-badge badge-freemium">Freemium</span></div>
+          <div class="tool-name">Make</div>
+          <div class="tool-desc">Automatización de procesos empresariales sin código. Conecta todas tus apps y elimina tareas repetitivas con flujos inteligentes.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 9.1</span><span>Automatización</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://www.jasper.ai" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">✍️</div><span class="tool-badge badge-paid">De pago</span></div>
+          <div class="tool-name">Jasper AI</div>
+          <div class="tool-desc">Generación de contenido de marketing con IA. Emails, posts, anuncios y textos SEO en minutos para tu negocio.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 8.6</span><span>Marketing</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://claude.ai" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">🤖</div><span class="tool-badge badge-freemium">Freemium</span></div>
+          <div class="tool-name">Claude</div>
+          <div class="tool-desc">El asistente IA más potente para redacción, análisis de documentos largos y automatización de tareas complejas en empresas.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 9.4</span><span>Asistente IA</span><span class="tool-arrow">→</span></div>
+        </a>
+        <a href="https://go.hynote.ai/6kgE2b" target="_blank" class="tool-card">
+          <div class="tool-card-top"><div class="tool-icon">🎙️</div><span class="tool-badge badge-freemium">Freemium</span></div>
+          <div class="tool-name">HyNote AI</div>
+          <div class="tool-desc">Toma de notas inteligente con IA. Transcribe reuniones, resume documentos y organiza toda la información de tu negocio automáticamente.</div>
+          <div class="tool-meta"><span class="tool-rating">★ 9.0</span><span>Productividad</span><span class="tool-arrow">→</span></div>
+        </a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="articulos" class="articles-bg">
+      <div class="section-tag">Guías y análisis</div>
+      <h2 class="section-title">Artículos recientes</h2>
+      <p class="section-sub">Guías prácticas para implementar IA en tu negocio desde hoy.</p>
+      <div class="search-wrap">
+        🔍
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar artículos... (inmobiliaria, Make, abogados...)" oninput="handleSearch(this.value)" />
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">
+          ✕
+        </button>
+      </div>
+      <div class="search-results-count" id="searchCount"></div>
+      <div class="no-results" id="noResults">No se encontraron artículos para esa búsqueda.</div>
+      <div class="uniform-grid">
+        <div class="ucard" data-id="inmobiliarias" onclick="showArticle('inmobiliarias')">
+          <div class="article-cat">Sector inmobiliario</div>
+          <div class="ucard-title">Mejor IA para inmobiliarias en 2026</div>
+          <div class="ucard-excerpt">Herramientas para captar más clientes, automatizar visitas y cerrar más ventas.</div>
+          <div class="ucard-meta"><span>20 abril</span><span>·</span><span>9 min</span></div>
+        </div>
+        <div class="ucard" data-id="whatsapp" onclick="showArticle('whatsapp')">
+          <div class="article-cat">Automatización</div>
+          <div class="ucard-title">Cómo automatizar WhatsApp con IA</div>
+          <div class="ucard-excerpt">Responde clientes, captura leads y cierra ventas sin estar pendiente del móvil.</div>
+          <div class="ucard-meta"><span>18 abril</span><span>·</span><span>7 min</span></div>
+        </div>
+        <div class="ucard" data-id="alternativas" onclick="showArticle('alternativas')">
+          <div class="article-cat">Comparativa</div>
+          <div class="ucard-title">Mejores alternativas a ChatGPT para empresas</div>
+          <div class="ucard-excerpt">Claude, Gemini, Copilot, Mistral: cuál conviene más según tu negocio.</div>
+          <div class="ucard-meta"><span>15 abril</span><span>·</span><span>8 min</span></div>
+        </div>
+        <div class="ucard" data-id="atencion" onclick="showArticle('atencion')">
+          <div class="article-cat">Atención al cliente</div>
+          <div class="ucard-title">IA para la atención al cliente en 2026</div>
+          <div class="ucard-excerpt">Resuelve el 70% de las consultas automáticamente sin perder el toque humano.</div>
+          <div class="ucard-meta"><span>10 abril</span><span>·</span><span>6 min</span></div>
+        </div>
+        <div class="ucard" data-id="make" onclick="showArticle('make')">
+          <div class="article-cat">Automatización</div>
+          <div class="ucard-title">Make: qué es y por qué usarlo en tu negocio</div>
+          <div class="ucard-excerpt">La herramienta de automatización más potente explicada desde cero con casos reales.</div>
+          <div class="ucard-meta"><span>25 abril</span><span>·</span><span>10 min</span></div>
+        </div>
+        <div class="ucard" data-id="abogados" onclick="showArticle('abogados')">
+          <div class="article-cat">Sector legal</div>
+          <div class="ucard-title">IA para abogados: las mejores implementaciones</div>
+          <div class="ucard-excerpt">Análisis de contratos, investigación jurídica y gestión de expedientes con IA.</div>
+          <div class="ucard-meta"><span>27 abril</span><span>·</span><span>9 min</span></div>
+        </div>
+        <div class="ucard" data-id="rrss" onclick="showArticle('rrss')">
+          <div class="article-cat">Marketing digital</div>
+          <div class="ucard-title">IA para crear contenido en redes sociales</div>
+          <div class="ucard-excerpt">Genera semanas de contenido en horas. Flujo completo desde estrategia hasta publicación.</div>
+          <div class="ucard-meta"><span>28 abril</span><span>·</span><span>7 min</span></div>
+        </div>
+        <div class="ucard" data-id="ecommerce" onclick="showArticle('ecommerce')">
+          <div class="article-cat">Ecommerce</div>
+          <div class="ucard-title">Herramientas IA para tiendas online en 2026</div>
+          <div class="ucard-excerpt">Aumenta conversiones, automatiza el backend y mejora la atención al cliente.</div>
+          <div class="ucard-meta"><span>29 abril</span><span>·</span><span>8 min</span></div>
+        </div>
+        <div class="ucard" data-id="vpn" onclick="showArticle('vpn')">
+          <div class="article-cat">Ciberseguridad</div>
+          <div class="ucard-title">Ciberseguridad para empresas: las mejores VPN en 2026</div>
+          <div class="ucard-excerpt">Protege los datos de tu negocio con las mejores VPN. Comparativa honesta para pymes y autónomos.</div>
+          <div class="ucard-meta"><span>30 abril</span><span>·</span><span>8 min</span></div>
+        </div>
+        <div class="ucard" data-id="inmobiliaria-make" onclick="showArticle('inmobiliaria-make')">
+          <div class="article-cat">Tutorial real</div>
+          <div class="ucard-title">Cómo automatizar una inmobiliaria española con Make y WhatsApp</div>
+          <div class="ucard-excerpt">Flujo paso a paso: captación, cualificación y seguimiento automático sin tocar el móvil.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>11 min</span></div>
+        </div>
+        <div class="ucard" data-id="gestoria-ia" onclick="showArticle('gestoria-ia')">
+          <div class="article-cat">Caso práctico</div>
+          <div class="ucard-title">Cómo una gestoría puede ahorrar 10h/semana con IA</div>
+          <div class="ucard-excerpt">El flujo completo: qué tareas automatizar, con qué herramientas y en qué orden.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>10 min</span></div>
+        </div>
+        <div class="ucard" data-id="make-tutorial" onclick="showArticle('make-tutorial')">
+          <div class="article-cat">Tutorial paso a paso</div>
+          <div class="ucard-title">Make para principiantes: tutorial completo con ejemplos reales</div>
+          <div class="ucard-excerpt">Desde cero hasta tu primera automatización funcionando. Con capturas y ejemplos en español.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>12 min</span></div>
+        </div>
+        <div class="ucard" data-id="hynote-reuniones" onclick="showArticle('hynote-reuniones')">
+          <div class="article-cat">Productividad</div>
+          <div class="ucard-title">Cómo ahorrar 5 horas semanales en reuniones con IA</div>
+          <div class="ucard-excerpt">Tutorial práctico para transcribir, resumir y extraer tareas de tus reuniones automáticamente.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>9 min</span></div>
+        </div>
+        <div class="ucard" data-id="hynote-vs" onclick="showArticle('hynote-vs')">
+          <div class="article-cat">Comparativa</div>
+          <div class="ucard-title">HyNote vs Otter vs Notion AI: cuál elegir para tu empresa</div>
+          <div class="ucard-excerpt">Comparativa honesta de las tres mejores herramientas IA para notas y reuniones en 2026.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>8 min</span></div>
+        </div>
+        <div class="ucard" data-id="restaurantes-ia" onclick="showArticle('restaurantes-ia')">
+          <div class="article-cat">Hostelería</div>
+          <div class="ucard-title">IA para restaurantes: automatizar reservas, carta y atención al cliente</div>
+          <div class="ucard-excerpt">Cómo los restaurantes españoles están usando IA para llenar mesas y reducir trabajo manual.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>10 min</span></div>
+        </div>
+        <div class="ucard" data-id="facturacion-make-holded" onclick="showArticle('facturacion-make-holded')">
+          <div class="article-cat">Tutorial real</div>
+          <div class="ucard-title">Cómo automatizar la facturación de tu empresa con Make y Holded</div>
+          <div class="ucard-excerpt">Flujo completo paso a paso: facturas generadas y enviadas automáticamente sin tocar nada.</div>
+          <div class="ucard-meta"><span>1 mayo</span><span>·</span><span>11 min</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="comparativas">
+      <div class="section-tag">Comparativa</div>
+      <h2 class="section-title">Software de gestión con IA: cara a cara</h2>
+      <p class="section-sub">Comparamos las principales herramientas IA para gestión empresarial en España.</p>
+      <div style="overflow-x: auto; border: 1px solid var(--border);">
+        <table class="compare-table">
+          <thead>
+            <tr><th>Herramienta</th><th>Precio/mes</th><th>IA integrada</th><th>En español</th><th>Mejor para</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong><a href="https://www.holded.com" target="_blank" style="color:var(--accent);">Holded</a></strong></td><td>desde 14€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Autónomos y pymes</td><td><a href="https://www.holded.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://factorialhr.es" target="_blank" style="color:var(--accent);">Factorial HR</a></strong></td><td>desde 5€/empleado</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Gestión de equipos</td><td><a href="https://factorialhr.es" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a></strong></td><td>desde 8€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Proyectos y documentación</td><td><a href="https://notion.com" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong>Make</strong></td><td>Gratis / 9€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Automatización de procesos</td><td><a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong><a href="https://www.jasper.ai" target="_blank" style="color:var(--accent);">Jasper AI</a></strong></td><td>desde 39€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Marketing y contenido</td><td><a href="https://www.jasper.ai" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+            <tr><td><strong>HyNote AI</strong></td><td>Gratis / 20€</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td>Reuniones y notas</td><td><a href="https://go.hynote.ai/6kgE2b" target="_blank" class="tool-link">Ver precio →</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <footer>
+      <a href="#" class="footer-logo" onclick="showHome()">IA<span>negocios</span>.es</a>
+      <ul class="footer-links">
+        <li><a href="javascript:void(0)" onclick="showPage('sobre')">Sobre nosotros</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('privacidad')">Política de privacidad</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('afiliados')">Política de afiliados</a></li>
+      </ul>
+      <span class="footer-copy">© 2026 IAnegocios.es — Contenido independiente</span>
+    </footer>
+
+  </div><!-- /home -->
+
+  <!-- ==================== ARTÍCULO 1: INMOBILIARIAS ==================== -->
+  <div id="article-inmobiliarias" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Sector inmobiliario</div>
+      <h1>Mejor IA para inmobiliarias en 2026: guía completa</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">La inteligencia artificial está transformando el sector inmobiliario en España. Te contamos qué herramientas usar y cómo sacarles partido desde hoy.</p>
+      <div class="article-meta"><span>20 abril 2026</span><span>·</span><span>9 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Si tienes una inmobiliaria, probablemente ya sabes de qué va esto: el cliente te escribe a las 10 de la noche por Idealista, tú lo ves al día siguiente, y para entonces ya ha contactado con otras tres agencias. No es falta de interés por tu parte, es simplemente imposible estar disponible siempre.</p>
+      <p>La IA no soluciona todos los problemas del sector, pero sí resuelve ese: estar disponible cuando tú no puedes estarlo, responder en segundos y cualificar al cliente antes de que tú tengas que invertir ni un minuto de tu tiempo.</p>
+
+      <h2>¿Dónde encaja realmente la IA en una inmobiliaria?</h2>
+      <p>No en todos sitios, y eso es importante entenderlo. La IA no va a negociar en tu nombre ni a generar confianza con un cliente difícil. Pero sí puede hacerse cargo de las partes más mecánicas del proceso:</p>
+      <ul>
+        <li><strong>Responder consultas básicas</strong> a cualquier hora sin que tú estés disponible</li>
+        <li><strong>Cualificar leads</strong> preguntando presupuesto, zona, tipo de inmueble y urgencia antes de que lleguen a ti</li>
+        <li><strong>Redactar fichas de inmuebles</strong> en segundos a partir de los datos básicos</li>
+        <li><strong>Hacer seguimiento</strong> de los contactos que no han respondido sin que tengas que recordarlo</li>
+      </ul>
+      <p>El resultado práctico es que llegas a las reuniones con clientes mejor cualificados y con menos tiempo perdido en gestiones.</p>
+
+      <h2>Las herramientas que realmente usan las inmobiliarias</h2>
+
+      <h3>1. <a href="https://chatgpt.com" target="_blank" style="color:var(--accent);">ChatGPT</a> / <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> — Para redactar fichas y comunicaciones</h3>
+      <p>Redactar una ficha de inmueble decente lleva tiempo. Con Claude o ChatGPT lo haces en 30 segundos: le das los datos básicos (metros, habitaciones, zona, precio) y te devuelve una descripción persuasiva y bien escrita. Multiplica eso por el número de inmuebles que gestionas y el ahorro es considerable.</p>
+      <p>Además de fichas, puedes usarlos para redactar emails de seguimiento, responder consultas complejas o preparar argumentarios para negociaciones. Claude destaca especialmente para analizar documentos largos como contratos o escrituras, algo muy útil si gestionas operaciones complejas.</p>
+      <div class="article-cta-box">
+        <p>Prueba Claude con una ficha de inmueble real. En menos de un minuto verás la diferencia.</p>
+        <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
+      </div>
+
+      <h3>2. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — El chatbot que trabaja mientras tú duermes</h3>
+      <p>Tidio es un chatbot con IA que se instala en tu web en minutos. Responde preguntas frecuentes, captura datos de contacto y cualifica a los visitantes interesados automáticamente. Su mayor ventaja para una inmobiliaria es exactamente esa: está disponible a las 3 de la madrugada cuando tú no. El plan gratuito es suficiente para empezar.</p>
+
+      <h3>3. Make — Para conectarlo todo automáticamente</h3>
+      <p>Make es donde la cosa se pone interesante. Imagina que alguien rellena el formulario de tu web: Make le envía un WhatsApp de bienvenida, añade sus datos a tu CRM y te manda una notificación. Todo en segundos, sin que tú hayas hecho nada. Si todavía gestionas esto a mano, estás perdiendo tiempo que podrías dedicar a cerrar operaciones.</p>
+      <div class="article-cta-box">
+        <p>Make tiene plan gratuito y conecta tu web, WhatsApp y CRM en una tarde. Sin saber programar.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Probar Make gratis →</a>
+      </div>
+
+      <h3>4. <a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva AI</a> — Para los materiales visuales</h3>
+      <p>Presentaciones de inmuebles, flyers para redes sociales, dossieres para clientes. Canva con IA genera este tipo de materiales en minutos con un resultado profesional. No necesitas diseñador para cada inmueble nuevo.</p>
+
+      <h3>5. <a href="https://lofty.com" target="_blank" style="color:var(--accent);">Lofty</a> — CRM específico para inmobiliarias con IA</h3>
+      <p>Si quieres un CRM diseñado específicamente para el sector, Lofty tiene IA integrada que predice qué leads tienen más probabilidad de convertirse en clientes y prioriza tu agenda en consecuencia. Es una inversión mayor, pero para agencias con volumen marca la diferencia.</p>
+
+      <h2>Por dónde empezar sin agobiarse</h2>
+      <p>Si nunca has usado IA en tu inmobiliaria, el orden lógico es: primero Claude para las fichas (verás el resultado inmediato), luego Tidio en tu web para capturar leads fuera de horario, y cuando veas el volumen que genera, Make para automatizar el proceso completo. Con menos de 50€ al mes puedes tener un sistema que competiría con el de agencias mucho más grandes.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Las herramientas están, el tiempo para implementarlas también. La pregunta es cuántos leads más estás dispuesto a perder antes de empezar.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 2: WHATSAPP ==================== -->
+  <div id="article-whatsapp" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Automatización</div>
+      <h1>Cómo automatizar WhatsApp con IA para tu negocio en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">WhatsApp es el canal de comunicación número uno en España. Te explicamos cómo automatizarlo con IA para responder clientes, captar leads y cerrar ventas sin estar pendiente del móvil.</p>
+      <div class="article-meta"><span>18 abril 2026</span><span>·</span><span>7 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay un momento que reconoce cualquier persona con negocio en España: abres el móvil por la mañana y tienes seis mensajes de WhatsApp de clientes que escribieron anoche. Y tienes que responder a todos antes de que el día se llene de otras cosas.</p>
+      <p>La automatización de WhatsApp no es magia, pero sí es la diferencia entre responder en 30 segundos a las 11 de la noche o al día siguiente a las 9. Y en muchos negocios, esos 10 horas de diferencia cuestan ventas.</p>
+
+      <h2>Antes de automatizar: el punto de partida obligatorio</h2>
+
+      <h3>1. WhatsApp Business (gratis) — Si todavía usas el WhatsApp normal para tu negocio, para</h3>
+      <p>WhatsApp Business es gratis y tiene cosas que el normal no: mensaje de bienvenida automático, mensaje de ausencia fuera de horario, respuestas rápidas para las preguntas que te hacen siempre, y un catálogo de productos. No es IA, pero es el primer paso que no puedes saltarte.</p>
+
+      <h3>2. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — Chatbot con IA para WhatsApp y web</h3>
+      <p>Tidio conecta un chatbot con IA a tu WhatsApp Business. El bot responde preguntas frecuentes, recoge datos del cliente y escala la conversación a una persona cuando la consulta lo requiere. Lo más útil: puedes entrenarlo con las preguntas específicas de tu negocio para que las respuestas sean precisas, no genéricas. El plan básico es gratuito.</p>
+
+      <h3>3. Make + WhatsApp API — Cuando el volumen lo justifica</h3>
+      <p>La API oficial de WhatsApp Business conectada con Make es el nivel siguiente. Permite flujos más complejos: el cliente manda un mensaje, la IA lo clasifica, responde si puede o crea una tarea en tu CRM si necesita atención humana. Requiere más configuración y un proveedor como 360dialog (desde 5€/mes), pero para negocios con volumen es donde está el ahorro real de tiempo.</p>
+      <div class="article-cta-box">
+        <p>Make conecta WhatsApp con tu CRM y correo automáticamente. Plan gratuito disponible.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Probar Make gratis →</a>
+      </div>
+
+      <h3>4. <a href="https://manychat.com" target="_blank" style="color:var(--accent);">Manychat</a> — Para campañas de marketing por WhatsApp</h3>
+      <p>Si lo tuyo es el marketing más que la atención al cliente, Manychat es la herramienta. Permite enviar mensajes personalizados a listas de contactos, crear secuencias de seguimiento automáticas y conectar con tu tienda para notificaciones de pedidos o carritos abandonados. Es la opción más potente para ecommerce y tiendas físicas con base de clientes grande.</p>
+
+      <h2>Casos concretos por tipo de negocio</h2>
+      <ul>
+        <li><strong>Restaurantes:</strong> confirmación de reservas, menú del día, recordatorio 2 horas antes</li>
+        <li><strong>Clínicas:</strong> confirmación de cita, instrucciones previas, recordatorio 24h antes</li>
+        <li><strong>Tiendas online:</strong> confirmación de pedido, número de seguimiento, encuesta postventa</li>
+        <li><strong>Inmobiliarias:</strong> respuesta automática a consultas, envío de ficha del inmueble, propuesta de visita</li>
+        <li><strong>Academias:</strong> bienvenida, materiales de clase, recordatorio de sesión</li>
+      </ul>
+
+      <h2>Una cosa que no puedes hacer</h2>
+      <p>Usar herramientas no oficiales que simulan WhatsApp o envían mensajes masivos sin API oficial. WhatsApp detecta este comportamiento y bloquea el número permanentemente. Siempre API oficial, siempre con consentimiento del usuario.</p>
+
+      <h2>El orden correcto para empezar</h2>
+      <p>Primero WhatsApp Business si aún no lo tienes. Luego configura los mensajes automáticos básicos. Cuando veas que recibes consultas repetidas, añade Tidio. Cuando el volumen justifique la inversión, da el salto a Make con la API oficial. No hace falta hacerlo todo a la vez.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 3: ALTERNATIVAS CHATGPT ==================== -->
+  <div id="article-alternativas" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Comparativa</div>
+      <h1>Las mejores alternativas a ChatGPT para empresas en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">ChatGPT no es la única opción. Analizamos las mejores alternativas para uso empresarial, con sus ventajas, precios y casos de uso concretos.</p>
+      <div class="article-meta"><span>15 abril 2026</span><span>·</span><span>8 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Cuando la gente habla de IA para empresas, lo primero que sale es ChatGPT. Tiene sentido, fue el primero en hacerse popular. Pero en 2026 quedarse solo con ChatGPT es como usar solo Google Maps cuando existen otras opciones que, dependiendo de para qué, funcionan mejor.</p>
+      <p>Esta comparativa no es una lista de características copiada de sus webs. Es lo que hemos visto en uso real, con las ventajas concretas de cada una y para quién tiene más sentido cada opción.</p>
+
+      <h2>1. Claude — Para documentos largos y redacción profesional</h2>
+      <p>Si tuviéramos que recomendar una sola alternativa a ChatGPT para uso empresarial, sería Claude. No porque sea perfecta en todo, sino porque es la mejor en las cosas que más importan en un contexto profesional: analizar documentos largos (contratos, informes, expedientes), redactar con precisión y manejar información sensible con más cuidado que la competencia.</p>
+      <p>Donde ChatGPT a veces inventa o se pierde en documentos largos, Claude mantiene el hilo y cita con precisión. El plan gratuito es generoso y el Pro cuesta 18€/mes, menos que muchos competidores.</p>
+      <div class="article-cta-box">
+        <p>Claude tiene plan gratuito. Pruébalo con un documento real de tu negocio y compara tú mismo.</p>
+        <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
+      </div>
+
+      <h2>2. <a href="https://gemini.google.com" target="_blank" style="color:var(--accent);">Gemini Advanced</a> — Si ya vives en Google</h2>
+      <p>Si tu empresa usa Gmail, Drive, Docs y Sheets a diario, Gemini Advanced es la opción más cómoda. No porque sea la más potente en abstracto, sino porque está integrada directamente en las herramientas que ya usas: resume emails dentro de Gmail, analiza hojas de cálculo en Sheets y redacta en Docs sin cambiar de pestaña. A 22€/mes incluye Google One, lo que lo hace razonablemente justificable si ya pagas por Workspace.</p>
+
+      <h2>3. <a href="https://copilot.microsoft.com" target="_blank" style="color:var(--accent);">Microsoft Copilot</a> — Si tu empresa es de Microsoft</h2>
+      <p>Misma lógica que Gemini pero para el ecosistema Microsoft. Si tu equipo vive en Teams, Word, Excel y Outlook, Copilot Pro se integra en todo eso y genera documentos, resume reuniones y analiza datos directamente desde las herramientas de trabajo. El problema es el precio: 22€/mes por usuario se hace notar en equipos grandes. Para autónomos o empresas pequeñas, probablemente Claude sea más rentable.</p>
+
+      <h2>4. <a href="https://chat.mistral.ai" target="_blank" style="color:var(--accent);">Mistral Le Chat</a> — La alternativa europea</h2>
+      <p>Mistral es una empresa francesa y eso importa más de lo que parece. Sus datos se procesan en Europa, lo que facilita el cumplimiento del RGPD y puede ser decisivo para empresas en sectores regulados como salud, finanzas o derecho. El plan gratuito es genuinamente útil y para empresas que necesitan desplegar el modelo en su propia infraestructura, tienen opciones que ni OpenAI ni Anthropic ofrecen fácilmente en Europa.</p>
+
+      <h2>5. <a href="https://perplexity.ai" target="_blank" style="color:var(--accent);">Perplexity</a> — Para investigar y verificar información</h2>
+      <p>Perplexity no es exactamente un asistente de chat. Es un motor de búsqueda con IA que cita sus fuentes, lo que lo hace muy diferente de los demás. Para equipos que necesitan investigar temas, seguir noticias del sector o verificar datos antes de usarlos, Perplexity es mucho más fiable que ChatGPT porque puedes comprobar de dónde viene cada afirmación. El plan Pro cuesta 17€/mes.</p>
+
+      <h2>La pregunta que importa: ¿cuál te conviene a ti?</h2>
+      <ul>
+        <li>Si manejas documentos largos o necesitas precisión → <strong>Claude</strong></li>
+        <li>Si tu equipo vive en Google Workspace → <strong>Gemini Advanced</strong></li>
+        <li>Si usas Microsoft 365 en la empresa → <strong>Copilot Pro</strong></li>
+        <li>Si el RGPD es una preocupación real → <strong>Mistral Le Chat</strong></li>
+        <li>Si necesitas investigar y citar fuentes → <strong>Perplexity</strong></li>
+        <li>Si quieres empezar sin gastar nada → <strong>Claude o Mistral</strong>, ambos tienen planes gratuitos sólidos</li>
+      </ul>
+      <p>Lo más inteligente es probar dos opciones durante una semana antes de comprometerte. Todas tienen planes gratuitos que te permiten evaluar sin riesgo.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">ChatGPT fue el primero, pero no siempre es el mejor para cada caso. La única forma de saberlo es probando.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 4: ATENCIÓN AL CLIENTE ==================== -->
+  <div id="article-atencion" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Atención al cliente</div>
+      <h1>Cómo usar la IA para la atención al cliente en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">La IA puede responder el 70% de las consultas de tus clientes de forma automática. Te explicamos cómo implementarlo en tu negocio sin perder el toque humano.</p>
+      <div class="article-meta"><span>10 abril 2026</span><span>·</span><span>6 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay una pregunta que se hacen casi todos los negocios en algún momento: ¿cuánto tiempo pasamos respondiendo siempre las mismas cosas? Horario, precio, cómo se hace un pedido, cuándo llega el envío. Las mismas cinco preguntas, cien veces al mes.</p>
+      <p>La IA no va a resolver todas tus consultas de atención al cliente. Pero sí puede resolver esas cinco preguntas de forma inmediata, a cualquier hora, sin que nadie de tu equipo tenga que estar pendiente. Lo que queda, lo que requiere criterio y empatía real, eso sí lo hace una persona.</p>
+
+      <h2>Antes de instalar nada: qué preguntas te hacen siempre</h2>
+      <p>El primer paso no es técnico. Es abrir los chats del último mes y apuntar las diez preguntas que más se repiten. En la mayoría de negocios el patrón es siempre el mismo: horario, precio, estado del pedido, política de devoluciones, cómo contactar. Esas son las que automatizas primero. El resto, de momento, lo sigues gestionando tú.</p>
+      <p>Empieza por el canal donde más volumen recibes, normalmente WhatsApp o el chat de la web, y cuando eso funcione bien expandes al resto.</p>
+
+      <h2>Las herramientas que funcionan en la práctica</h2>
+
+      <h3><a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> — El más fácil de instalar para webs y tiendas</h3>
+      <p>Tidio es chatbot con IA y chat en vivo en una sola plataforma. Lo instalas en tu web en 10 minutos, configuras las respuestas a tus preguntas frecuentes y desde ese momento el bot las responde solo. Cuando la consulta es compleja, escala automáticamente a un agente humano. Se integra con Shopify y WooCommerce. Plan gratuito disponible, y es suficiente para empezar.</p>
+
+      <h3><a href="https://intercom.com" target="_blank" style="color:var(--accent);">Intercom</a> — Para empresas con más volumen</h3>
+      <p>Si recibes cientos de consultas al mes, Intercom es otra escala. Su IA se llama Fin y puede resolver consultas bastante complejas con buena precisión. Empieza en 39€/mes, lo que lo hace caro para negocios pequeños, pero para empresas con equipo de soporte el retorno suele ser rápido porque reduce el tiempo que cada agente dedica a consultas repetitivas.</p>
+
+      <h3><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a> — Para organizar el conocimiento interno</h3>
+      <p>Notion AI no es un chatbot para clientes, sino una herramienta para tu equipo. Si tus agentes de soporte pierden tiempo buscando información (políticas, procedimientos, respuestas tipo), Notion AI centraliza todo eso y lo hace búscable de forma inteligente. Es especialmente útil cuando el equipo crece y la información empieza a estar dispersa.</p>
+
+      <h3><a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude API</a> — Para soluciones a medida</h3>
+      <p>Si tienes un desarrollador en el equipo o presupuesto para contratar uno, la API de Claude permite crear un asistente entrenado específicamente con el conocimiento de tu empresa: productos, precios, políticas, preguntas frecuentes. El resultado es mucho más preciso que un chatbot genérico. Requiere inversión inicial pero para negocios con volumen alto es la opción más potente.</p>
+
+      <h2>El error que comete casi todo el mundo</h2>
+      <p>Intentar automatizarlo todo. Un cliente que tiene un problema serio o una queja legítima no quiere hablar con un bot, quiere hablar con una persona. Si fuerza esa conversación a través de IA, la experiencia empeora y el cliente se va. El modelo que funciona es el híbrido: la IA resuelve el 60-70% de las consultas simples, y las que requieren criterio llegan a una persona con todo el contexto ya disponible.</p>
+
+      <h2>Cómo medir si está funcionando</h2>
+      <p>Tres números que importan: el porcentaje de consultas que resuelve la IA sin intervención humana (objetivo razonable: 60%), el tiempo de primera respuesta (con IA debería ser menos de un minuto) y la satisfacción del cliente después de la interacción. Si los tres mejoran, vas bien. Si la satisfacción baja aunque el tiempo mejore, algo falla en las respuestas del bot.</p>
+
+      <h2>Por dónde empezar hoy</h2>
+      <p>Instala Tidio en tu web, es gratis y tarda 10 minutos. Configura respuestas para tus preguntas más frecuentes. Déjalo funcionar una semana y mira cuántas consultas resuelve solo. Con esos datos ya puedes decidir si quieres invertir en algo más avanzado o si el plan gratuito es suficiente para tu volumen.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">La IA en atención al cliente no sustituye a las personas. Las libera para las conversaciones que realmente importan.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 5: MAKE ==================== -->
+  <div id="article-make" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Automatización</div>
+      <h1>Make: qué es, cómo funciona y por qué usarlo en tu negocio en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Make es la herramienta de automatización más potente del mercado. Te explicamos qué es, para qué sirve y cómo puede ahorrarte horas de trabajo cada semana.</p>
+      <div class="article-meta"><span>25 abril 2026</span><span>·</span><span>10 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay una tarea que casi todos los negocios hacen de forma manual sin darse cuenta de lo absurdo que es: cuando llega un cliente nuevo, alguien copia sus datos del email al CRM, luego crea una carpeta en Drive, luego le manda un email de bienvenida, luego avisa al equipo. Cuatro acciones, cinco minutos, repetidas cien veces al mes. Son más de ocho horas mensuales en copy-paste.</p>
+      <p>Make hace esas cuatro cosas automáticamente en cuanto llega el email. Sin que nadie toque nada.</p>
+
+      <h2>Qué es Make y cómo funciona</h2>
+      <p>Make es una plataforma visual que conecta aplicaciones entre sí y ejecuta acciones automáticamente cuando ocurre algo. Sin código, sin programar, arrastrando bloques como piezas de Lego.</p>
+      <p>El concepto central es el <strong>escenario</strong>: una cadena de pasos que se activa cuando ocurre un evento. Cada escenario tiene un disparador (algo que activa el flujo) y una serie de módulos (acciones que se ejecutan en orden). Ejemplo real: alguien rellena tu formulario de contacto (disparador) → Make añade sus datos a Google Sheets (módulo 1) → envía un email de confirmación (módulo 2) → crea una tarea en Notion (módulo 3). Todo en segundos.</p>
+
+      <div class="article-cta-box">
+        <p>Make tiene plan gratuito con 1.000 operaciones al mes. Sin tarjeta de crédito.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Crear cuenta gratis en Make →</a>
+      </div>
+
+      <h2>Make vs Zapier: la comparativa honesta</h2>
+      <p>Zapier es el competidor más conocido y la comparación inevitable. La diferencia práctica es esta: Zapier es más fácil de usar al principio pero más limitado y bastante más caro. Make tiene algo más de curva de aprendizaje pero permite automatizaciones mucho más complejas al mismo precio o menos.</p>
+      <p>El plan gratuito de Make incluye 1.000 operaciones al mes. El de Zapier permite solo 5 automatizaciones simples. Para la mayoría de negocios españoles, Make es la opción más inteligente.</p>
+
+      <h2>Cuánto cuesta Make</h2>
+      <p>El plan gratuito cubre perfectamente las primeras semanas mientras aprendes. El Core (9€/mes) es lo que usan la mayoría de autónomos y pymes: 10.000 operaciones al mes y acceso a todas las apps. El Pro (16€/mes) añade funciones avanzadas para flujos más complejos. Para equipos grandes hay el plan Teams desde 29€/mes.</p>
+      <p>Una operación es cada acción individual que ejecuta Make. Un escenario con 3 módulos consume 3 operaciones por ejecución. Para hacerte una idea, 10.000 operaciones al mes son más de 300 ejecuciones diarias de un flujo de 3 pasos.</p>
+
+      <h2>10 automatizaciones que puedes montar hoy</h2>
+
+      <h3>1. Formulario → CRM automático</h3>
+      <p>Cuando alguien rellena un formulario (Tally, Typeform, Google Forms), Make añade el contacto a tu CRM (HubSpot, Pipedrive, Notion) y te avisa por email o WhatsApp.</p>
+
+      <h3>2. Facturación automática</h3>
+      <p>Nuevo pedido en tu tienda (Shopify, WooCommerce) → Make genera y envía la factura con Holded o Billin sin que toques nada.</p>
+
+      <h3>3. Publicación en redes sociales</h3>
+      <p>Añades contenido a una hoja de cálculo → Make lo publica automáticamente en Instagram, LinkedIn y Twitter con los formatos correctos para cada red.</p>
+
+      <h3>4. Seguimiento de leads fríos</h3>
+      <p>Un lead lleva X días sin actividad en tu CRM → Make envía un email de seguimiento personalizado automáticamente.</p>
+
+      <h3>5. Archivado de documentos</h3>
+      <p>Recibes un email con factura adjunta → Make descarga el archivo, lo renombra y lo guarda en la carpeta correcta de Drive.</p>
+
+      <h3>6. Alertas de stock</h3>
+      <p>El stock de un producto baja del mínimo → Make te avisa y puede crear una orden de reposición automáticamente.</p>
+
+      <h3>7. Monitorización de reseñas</h3>
+      <p>Llega una nueva reseña en Google Maps o Trustpilot → Make te notifica al instante para que respondas rápido.</p>
+
+      <h3>8. Informes semanales automáticos</h3>
+      <p>Cada lunes a las 8:00, Make recopila datos de ventas, tráfico y redes sociales y te envía el resumen por email.</p>
+
+      <h3>9. Onboarding de nuevos clientes</h3>
+      <p>Nuevo cliente firma o paga → Make activa la secuencia: email de bienvenida, acceso a materiales, creación del proyecto en tu gestor de tareas.</p>
+
+      <h3>10. Reservas y recordatorios</h3>
+      <p>Alguien reserva en Calendly → Make crea el evento en Google Calendar, envía confirmación y recordatorio 24h antes.</p>
+
+      <h2>Make con IA integrada</h2>
+      <p>Desde 2024, Make incluye módulos de IA directamente en los escenarios. Esto significa que puedes crear automatizaciones que no solo mueven datos, sino que los procesan de forma inteligente. Por ejemplo: recibes un email de un cliente → la IA analiza si es una queja, una consulta o un elogio → responde de forma diferente según el tipo. O: llega una imagen de un producto a Drive → la IA genera automáticamente la descripción SEO para tu tienda.</p>
+      <p>Esta combinación de automatización más IA es donde está el mayor ahorro de tiempo para cualquier negocio en 2026.</p>
+
+      <div class="article-cta-box">
+        <p>El plan gratuito de Make es suficiente para montar tus primeras automatizaciones. Sin compromisos.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar gratis con Make →</a>
+      </div>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 6: ABOGADOS ==================== -->
+  <div id="article-abogados" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Sector legal</div>
+      <h1>Las mejores implementaciones de IA para abogados en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">La inteligencia artificial está transformando la práctica legal. Descubre cómo los despachos de abogados en España están usando IA para trabajar más rápido, reducir errores y ofrecer mejores servicios.</p>
+      <div class="article-meta"><span>27 abril 2026</span><span>·</span><span>9 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay una conversación que ocurre cada vez más en los despachos: un abogado junior tarda tres horas en revisar un contrato de 80 páginas buscando cláusulas problemáticas. Su compañero hace lo mismo en 20 minutos con Claude. No porque sea mejor abogado, sino porque usa la herramienta correcta para el trabajo correcto.</p>
+      <p>La IA no ejerce la abogacía. No puede asesorar, no puede representar y no puede asumir responsabilidad profesional. Lo que sí hace es eliminar el trabajo mecánico que consume entre el 40 y el 60% del tiempo de muchos letrados: buscar, revisar, redactar borradores, organizar. Ese tiempo recuperado se puede dedicar a lo que realmente genera valor para el cliente.</p>
+
+      <h2>Análisis y revisión de contratos</h2>
+      <p>Es la aplicación más inmediata y la que más tiempo ahorra. Puedes pegar el texto de un contrato en <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> y pedirle cosas muy concretas: "Identifica las cláusulas que limitan la responsabilidad del vendedor", "Compara esta versión con la anterior y lista los cambios sustanciales", "Resume los plazos y obligaciones de cada parte".</p>
+      <p>El resultado no es perfecto y siempre requiere revisión del profesional, pero convierte una lectura de dos horas en una revisión de veinte minutos. Para despachos con volumen alto de contratos estándar, el impacto es enorme.</p>
+      <div class="article-cta-box">
+        <p>Claude analiza contratos largos con precisión. Pruébalo con un documento real de tu despacho.</p>
+        <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
+      </div>
+
+      <h2>Investigación jurídica</h2>
+      <p>Para jurisprudencia española, herramientas como Claude o ChatGPT pueden ayudar a estructurar argumentos, identificar principios generales y sintetizar doctrina sobre un tema concreto. Para sentencias específicas del CGPJ siempre hay que verificar con las bases de datos oficiales, porque la IA puede alucinar referencias que no existen.</p>
+      <p>Para doctrina internacional, <strong>Westlaw Edge</strong> y <strong>Lexis+ AI</strong> son las referencias del sector anglosajón y cada vez más despachos españoles las usan para asuntos con componente internacional.</p>
+
+      <h2>Redacción de borradores</h2>
+      <p>Contratos tipo, escritos judiciales, demandas estándar, comunicaciones a clientes. La IA puede generar el borrador inicial y el abogado lo revisa, adapta y firma. El ahorro es especialmente significativo en documentos repetitivos donde la estructura es siempre similar y solo cambian los datos concretos.</p>
+      <p>La advertencia es importante: la IA comete errores, inventa datos y a veces cita sentencias que no existen. Nunca publicar o entregar un documento generado por IA sin revisión exhaustiva. La responsabilidad profesional es del abogado, no de la herramienta.</p>
+
+      <h2>Organización de expedientes</h2>
+      <p><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a> permite crear una base de datos de expedientes donde puedes buscar información en lenguaje natural, generar cronologías automáticas y mantener el estado de cada caso actualizado. Para despachos con muchos asuntos activos simultáneamente, tener todo organizado y búscable de forma inteligente marca la diferencia en el día a día.</p>
+
+      <h2>Captación y atención inicial</h2>
+      <p>Muchos despachos tienen ya chatbots en su web que responden preguntas frecuentes, cualifican la consulta inicial y gestionan la agenda de primeras visitas. El cliente que llega a la web a las 10 de la noche puede obtener información básica y reservar una cita sin que nadie del despacho tenga que estar disponible.</p>
+
+      <h2>Lo que no puedes hacer con IA en un despacho</h2>
+      <p>Introducir datos confidenciales de clientes en herramientas de IA públicas sin verificar su política de privacidad y cumplimiento del RGPD. Esto no es una recomendación, es una obligación deontológica. Si vas a usar IA con información sensible, asegúrate de que el proveedor garantiza que los datos no se usan para entrenar modelos y que cumple con la normativa europea.</p>
+
+      <h2>Por dónde empezar</h2>
+      <p>Empieza con documentos internos sin información confidencial de clientes: resumir un artículo doctrinal, redactar el borrador de una cláusula estándar, estructurar un argumento. Cuando veas el ahorro de tiempo, expande gradualmente y con las precauciones de privacidad que correspondan.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">La IA no hace el trabajo del abogado. Hace el trabajo mecánico para que el abogado pueda hacer mejor su trabajo real.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 7: RRSS ==================== -->
+  <div id="article-rrss" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Marketing digital</div>
+      <h1>Cómo usar la IA para crear contenido para redes sociales en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">La IA puede generar semanas de contenido para tus redes sociales en cuestión de horas. Te explicamos cómo hacerlo de forma que el resultado parezca humano y conecte con tu audiencia.</p>
+      <div class="article-meta"><span>28 abril 2026</span><span>·</span><span>7 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Publicar en redes sociales de forma consistente es una de esas tareas que suenan fáciles hasta que tienes que hacerlo de verdad. Cada día hay que tener algo que decir, escribirlo bien, diseñar algo decente, programarlo y publicarlo. Y al día siguiente lo mismo. Y al otro.</p>
+      <p>La IA no soluciona la estrategia ni hace que tu contenido sea auténtico. Lo que sí hace es eliminar el 80% del trabajo mecánico: los borradores, las variaciones, los textos de acompañamiento, los hashtags. Eso te deja tiempo para lo que importa: la voz, la perspectiva y la interacción real con tu comunidad.</p>
+
+      <h2>El flujo que realmente funciona</h2>
+
+      <h3>Primero: define el territorio antes de generar</h3>
+      <p>El error más común es abrir Claude o ChatGPT y pedir "posts para mi negocio" sin más contexto. El resultado es genérico porque el input es genérico. Antes de generar nada, define tres cosas: a quién le hablas exactamente, qué problema resuelves y qué tono quieres. Con eso claro, los resultados cambian radicalmente.</p>
+      <p>Un buen ejercicio: pídele a <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> que te proponga 10 categorías de contenido para tu tipo de negocio. Elige las 4-5 que más se ajusten a tu audiencia y trabaja siempre dentro de esas categorías. Así el contenido tiene coherencia y no parece generado al azar.</p>
+
+      <h3>Generar los textos: cómo dar un buen prompt</h3>
+      <p>La calidad del output depende completamente de la calidad del input. Un prompt mediocre da un post mediocre. Un prompt específico da un post que parece escrito por ti. Ejemplo de la diferencia:</p>
+      <p>Malo: "Escríbeme un post sobre mi clínica dental."</p>
+      <p>Bueno: "Soy dentista en Madrid, mi paciente ideal tiene entre 30 y 45 años y le da pereza ir al dentista por miedo o falta de tiempo. Escríbeme un post de Instagram con tono cercano y sin tecnicismos que desmonte el mito de que limpiezas frecuentes dañan el esmalte. Menos de 150 palabras."</p>
+      <p>La diferencia en el resultado es enorme. <a href="https://www.jasper.ai" target="_blank" style="color:var(--accent);">Jasper AI</a> también es buena opción si haces mucho volumen de contenido de marketing, porque tiene plantillas específicas para cada formato y red social.</p>
+
+      <div class="article-cta-box">
+        <p>Claude genera posts adaptados a tu negocio y tu tono. El plan gratuito es suficiente para empezar.</p>
+        <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
+      </div>
+
+      <h3>Las imágenes: Canva sigue siendo el rey</h3>
+      <p><a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva</a> con IA integrada permite generar imágenes, adaptar fotos y crear diseños en minutos. Para la mayoría de negocios, la combinación de plantillas de Canva más texto generado por Claude es suficiente para producir contenido visualmente consistente sin contratar un diseñador. Adobe Firefly es la alternativa para imágenes más elaboradas o si ya usas el ecosistema Adobe.</p>
+
+      <h3>Programar: hazlo una vez a la semana</h3>
+      <p><a href="https://metricool.com" target="_blank" style="color:var(--accent);">Metricool</a> es la opción más popular en España por su precio y su soporte en español. <a href="https://buffer.com" target="_blank" style="color:var(--accent);">Buffer</a> es la alternativa internacional más usada. Ambas permiten programar publicaciones en todas las redes desde un panel único. La dinámica que funciona: un bloque de 2 horas a la semana para generar y programar todo el contenido de los próximos 7 días. Luego solo dedicas tiempo a responder comentarios.</p>
+
+      <h3>El nivel avanzado: automatización completa con Make</h3>
+      <p>Si quieres llevarlo al extremo, <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" style="color:var(--accent);">Make</a> puede conectar todo: añades una idea a una hoja de cálculo, la IA genera el texto y la imagen, y Make lo programa automáticamente en Buffer. El proceso de producción pasa de horas a minutos. Requiere configuración inicial pero luego funciona solo.</p>
+
+      <h2>Lo que la IA no puede hacer por ti</h2>
+      <p>La autenticidad. Los comentarios que generan conversación real vienen de perspectivas genuinas, experiencias propias, opiniones que no todo el mundo comparte. La IA puede redactarlo, pero el pensamiento tiene que ser tuyo. Si publicas contenido 100% generado por IA sin añadir tu voz, el resultado es correcto pero aburrido. Y el aburrimiento en redes sociales es la muerte.</p>
+      <p>La regla práctica: usa la IA para el borrador, léelo, añade algo tuyo (una anécdota, una opinión, una referencia local) y publica. Ese paso extra marca la diferencia entre contenido que se ignora y contenido que conecta.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 8: ECOMMERCE ==================== -->
+  <div id="article-ecommerce" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Ecommerce</div>
+      <h1>Las mejores herramientas IA para ecommerce y tiendas online en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">La IA puede aumentar las ventas de tu tienda online, reducir el abandono de carrito y automatizar la atención al cliente. Te contamos qué herramientas usar y cómo implementarlas.</p>
+      <div class="article-meta"><span>29 abril 2026</span><span>·</span><span>8 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Gestionar una tienda online en España en 2026 es competir contra Amazon, Zara, El Corte Inglés y otras cien tiendas que venden lo mismo que tú. La única forma de sobrevivir en ese entorno es ser más eficiente en las operaciones y más relevante para el cliente. La IA ayuda con las dos cosas.</p>
+      <p>Esto no es una lista de promesas. Son herramientas concretas que tiendas reales usan para resolver problemas reales: descripciones de producto que no tienen tiempo de escribir, carritos abandonados que no recuperan, consultas de soporte que se acumulan.</p>
+
+      <h2>Descripciones de producto: el problema más común</h2>
+      <p>Si tienes más de 50 productos en catálogo, escribir descripciones decentes para todos es un trabajo que nadie hace bien porque nadie tiene tiempo. El resultado son fichas vacías, copiadas del proveedor o escritas con desgana. Google no las posiciona y los clientes no convierten.</p>
+      <p><a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> puede generar descripciones optimizadas para SEO a partir de las especificaciones básicas del producto: dimensiones, materiales, uso principal, diferencial frente a la competencia. El resultado requiere revisión, pero pasar de cero a un borrador sólido en 30 segundos cambia completamente la ecuación de tiempo.</p>
+      <div class="article-cta-box">
+        <p>Prueba Claude con tus productos más vendidos. El plan gratuito es más que suficiente para empezar.</p>
+        <a href="https://claude.ai" target="_blank">Probar Claude gratis →</a>
+      </div>
+
+      <h2>Atención al cliente: el volumen que nadie puede gestionar solo</h2>
+      <p><a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> se integra directamente con Shopify y WooCommerce y responde automáticamente las preguntas sobre estado de pedidos, política de devoluciones, disponibilidad de stock y plazos de envío. Esas cuatro categorías representan el 60-70% de las consultas de soporte en la mayoría de tiendas online. Automatizarlas libera a tu equipo (o a ti) para las consultas que realmente requieren criterio humano. Plan básico gratuito.</p>
+
+      <h2>Carritos abandonados: el dinero que ya tienes</h2>
+      <p>El carrito abandonado es el problema más subestimado del ecommerce. En España, la tasa media es del 70%: siete de cada diez personas que añaden algo al carrito se van sin comprar. <a href="https://klaviyo.com" target="_blank" style="color:var(--accent);">Klaviyo</a> con IA genera secuencias de recuperación personalizadas según el comportamiento del usuario: qué vio, qué añadió, cuánto tiempo lleva sin volver. La diferencia entre un email genérico de "olvidaste algo en tu carrito" y uno personalizado con el producto concreto y un incentivo específico es de varios puntos de tasa de conversión.</p>
+
+      <h2>Operaciones: lo que nadie ve pero consume todo el tiempo</h2>
+      <p>Sincronizar stock entre tu tienda y el almacén, crear etiquetas de envío, avisar a proveedores cuando el stock baja, generar informes de ventas, gestionar devoluciones. Todo eso se puede automatizar con <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" style="color:var(--accent);">Make</a>. La configuración inicial lleva tiempo, pero una vez montado funciona solo indefinidamente. Para tiendas con volumen medio, el ahorro puede ser de 10-20 horas mensuales en tareas operativas.</p>
+      <div class="article-cta-box">
+        <p>Make conecta tu tienda con tu almacén, tu email y tus proveedores automáticamente. Plan gratuito disponible.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar con Make gratis →</a>
+      </div>
+
+      <h2>Personalización: mostrar lo correcto a cada persona</h2>
+      <p><a href="https://nosto.com" target="_blank" style="color:var(--accent);">Nosto</a> usa IA para mostrar a cada visitante los productos más relevantes según su comportamiento e historial. Compatible con Shopify, Magento y WooCommerce. Las tiendas que lo implementan reportan incrementos de conversión reales, aunque es una inversión que solo tiene sentido cuando ya tienes volumen de tráfico suficiente para que la personalización marque diferencia.</p>
+
+      <h2>Imágenes y creatividades</h2>
+      <p><a href="https://canva.com" target="_blank" style="color:var(--accent);">Canva AI</a> para banners, anuncios y redes sociales. No sustituye a un fotógrafo para las fotos de producto, pero sí elimina la necesidad de diseñador para cada variación creativa de una campaña. Para tiendas que hacen publicidad frecuente, el ahorro en tiempo de diseño es considerable.</p>
+
+      <h2>Por dónde empezar según tu volumen</h2>
+      <p>Si estás empezando o tienes poco tráfico: empieza por las descripciones de producto con Claude (impacto en SEO desde el día uno) y Tidio para el soporte (ahorra tiempo inmediatamente). Si ya tienes volumen: añade Klaviyo para carritos abandonados y Make para las operaciones. Nosto solo tiene sentido con tráfico alto y catálogo amplio.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 6: ABOGADOS ==================== -->
+
+  <!-- ==================== ARTÍCULO 7: REDES SOCIALES ==================== -->
+
+  <!-- ==================== ARTÍCULO 8: ECOMMERCE ==================== -->
+
+  <!-- ==================== SOBRE NOSOTROS ==================== -->
+  <div id="page-sobre" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Quiénes somos</div>
+      <h1>Sobre IAnegocios.es</h1>
+    </div>
+    <div class="article-body">
+      <p>IAnegocios.es es un proyecto independiente creado para ayudar a autónomos y empresas españolas a entender y aprovechar las herramientas de inteligencia artificial disponibles hoy en día.</p>
+      <p>Nuestro objetivo es simple: publicar guías honestas, comparativas útiles y análisis prácticos que cualquier profesional pueda aplicar en su negocio, sin necesidad de conocimientos técnicos avanzados.</p>
+
+      <h2>¿Qué hacemos?</h2>
+      <p>Analizamos herramientas de IA para empresas, las probamos en escenarios reales y explicamos de forma clara para qué sirven, cuánto cuestan y si merece la pena usarlas. No publicamos contenido patrocinado ni aceptamos pago por reviews positivas.</p>
+
+      <h2>¿Cómo nos financiamos?</h2>
+      <p>IAnegocios.es se financia a través de programas de afiliados. Esto significa que cuando alguien se registra en una herramienta a través de nuestros enlaces, recibimos una pequeña comisión sin coste adicional para el usuario. Esto nos permite mantener el contenido gratuito y actualizado.</p>
+      <p>Nuestra política es clara: solo recomendamos herramientas que consideramos genuinamente útiles, independientemente de si tienen programa de afiliados o no.</p>
+
+      <h2>Contacto</h2>
+      <p>Para consultas, colaboraciones o sugerencias de contenido puedes escribirnos a través de nuestras redes sociales o por email.</p>
+    </div>
+  </div>
+
+  <!-- ==================== PRIVACIDAD ==================== -->
+  <div id="page-privacidad" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Legal</div>
+      <h1>Política de Privacidad</h1>
+      <div class="article-meta"><span>Última actualización: abril 2026</span></div>
+    </div>
+    <div class="article-body">
+      <p>En IAnegocios.es nos tomamos muy en serio la privacidad de nuestros visitantes. Esta política explica qué datos recopilamos, cómo los usamos y cuáles son tus derechos.</p>
+
+      <h2>Datos que recopilamos</h2>
+      <p>IAnegocios.es es un sitio web estático de contenido informativo. No recopilamos datos personales directamente a través de formularios de registro ni cuentas de usuario. Los únicos datos que pueden recopilarse son los generados automáticamente por el servidor web (dirección IP, navegador, páginas visitadas) con fines estadísticos agregados y anónimos.</p>
+
+      <h2>Cookies</h2>
+      <p>Esta web puede utilizar cookies técnicas necesarias para el funcionamiento básico del sitio. No utilizamos cookies de seguimiento ni publicidad comportamental propia. Sin embargo, los enlaces de afiliados hacia terceros (Make, Notion, Jasper, etc.) pueden establecer sus propias cookies cuando el usuario visita sus sitios web. Consulta las políticas de privacidad de cada servicio para más información.</p>
+
+      <h2>Enlaces de afiliados</h2>
+      <p>Algunos enlaces de esta web son enlaces de afiliado. Cuando haces clic en ellos y realizas una compra o registro, podemos recibir una comisión. Esto no supone ningún coste adicional para ti. Los datos que compartes con esos servicios están sujetos a sus propias políticas de privacidad.</p>
+
+      <h2>Tus derechos</h2>
+      <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), tienes derecho a acceder, rectificar, suprimir y portabilidad de tus datos personales. Dado que no recopilamos datos personales directamente, puedes ejercer estos derechos contactando con los servicios de terceros que hayas utilizado a través de esta web.</p>
+
+      <h2>Cambios en esta política</h2>
+      <p>Nos reservamos el derecho a actualizar esta política de privacidad. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.</p>
+    </div>
+  </div>
+
+  <!-- ==================== AFILIADOS ==================== -->
+  <div id="page-afiliados" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Legal</div>
+      <h1>Política de Afiliados</h1>
+      <div class="article-meta"><span>Última actualización: abril 2026</span></div>
+    </div>
+    <div class="article-body">
+      <p>IAnegocios.es participa en programas de marketing de afiliados. Esta página explica de forma transparente cómo funcionan y qué significa para ti como lector.</p>
+
+      <h2>¿Qué es un enlace de afiliado?</h2>
+      <p>Un enlace de afiliado es un enlace especial que identifica que el visitante proviene de nuestra web. Cuando haces clic en uno de estos enlaces y realizas una compra o registro en el servicio correspondiente, IAnegocios.es recibe una comisión por parte del proveedor.</p>
+
+      <h2>¿Te cuesta algo a ti?</h2>
+      <p>No. El precio que pagas por cualquier herramienta o servicio es exactamente el mismo tanto si llegas a través de nuestro enlace como si lo haces directamente. En algunos casos, nuestros enlaces de afiliado incluyen descuentos o períodos de prueba extendidos que benefician al usuario.</p>
+
+      <h2>¿Afecta esto a nuestras recomendaciones?</h2>
+      <p>Nuestra política es recomendar únicamente herramientas que consideramos genuinamente útiles para nuestros lectores. El hecho de que una herramienta tenga programa de afiliados no influye en nuestra valoración. De hecho, varias herramientas que recomendamos en esta web no tienen programa de afiliados y las incluimos igualmente porque son las mejores para cada caso de uso.</p>
+
+      <h2>Programas de afiliados actuales</h2>
+      <p>Actualmente participamos en el programa de afiliados de Make. Estamos en proceso de registro en otros programas. Cualquier enlace de afiliado activo está claramente identificado en los artículos correspondientes.</p>
+
+      <h2>Legislación aplicable</h2>
+      <p>Esta política cumple con los requisitos de transparencia exigidos por la Ley de Servicios de la Sociedad de la Información (LSSI) y el Reglamento General de Protección de Datos (RGPD) de la Unión Europea.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO 9: VPN / CIBERSEGURIDAD ==================== -->
+  <div id="article-vpn" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Ciberseguridad</div>
+      <h1>Ciberseguridad para empresas: las mejores VPN en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Proteger los datos de tu negocio ya no es opcional. Te explicamos qué es una VPN, por qué la necesita tu empresa y cuáles son las mejores opciones en 2026.</p>
+      <div class="article-meta"><span>30 abril 2026</span><span>·</span><span>8 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>La mayoría de empresas pequeñas en España piensan que la ciberseguridad es un problema de las grandes. Hasta que les pasa algo. Un ransomware que cifra todos los archivos del servidor, un empleado que se conecta desde un aeropuerto y alguien intercepta sus credenciales, una filtración de datos de clientes que acaba en una multa del RGPD.</p>
+      <p>No hace falta gastar mucho. Hace falta hacer las cosas básicas bien. Y una VPN es una de esas cosas básicas que cualquier negocio con teletrabajo o trabajo en movilidad debería tener.</p>
+
+      <h2>Qué hace una VPN exactamente</h2>
+      <p>Cifra toda la conexión a internet de tu dispositivo y la redirige por un servidor seguro. El resultado práctico son tres cosas: cuando tu equipo trabaja desde una cafetería o un hotel, nadie puede interceptar lo que envía o recibe. Los empleados en teletrabajo se conectan a los sistemas de la empresa como si estuvieran físicamente en la oficina. Y tu actividad online queda oculta a terceros.</p>
+      <p>Con el teletrabajo normalizado y los equipos cada vez más distribuidos, esto ya no es un extra, es una necesidad operativa básica.</p>
+
+      <h2>Las mejores opciones para empresas españolas</h2>
+
+      <h3>1. <a href="https://nordvpn.com/teams/" target="_blank" style="color:var(--accent);">NordVPN Teams</a> — La más equilibrada para pymes</h3>
+      <p>La versión empresarial de NordVPN es la que recomendaríamos para la mayoría de pymes y autónomos en España. Servidores en más de 60 países, cifrado sólido, política verificada de no registros y una app que cualquier empleado puede usar sin formación técnica. El panel de administración centralizado permite gestionar todos los accesos del equipo desde un solo sitio. El precio por usuario es competitivo y escala bien con el equipo.</p>
+      <div class="article-cta-box">
+        <p>NordVPN Teams tiene prueba gratuita. Sin compromiso de permanencia.</p>
+        <a href="https://nordvpn.com/teams/" target="_blank">Probar NordVPN Teams gratis →</a>
+      </div>
+
+      <h3>2. <a href="https://expressvpn.com" target="_blank" style="color:var(--accent);">ExpressVPN</a> — Si la velocidad es crítica</h3>
+      <p>La VPN más rápida del mercado. Ideal si tu equipo hace videollamadas frecuentes, transfiere archivos grandes o trabaja con aplicaciones en la nube que necesitan baja latencia. Algo más cara que NordVPN, pero justificada cuando la velocidad de conexión afecta directamente a la productividad.</p>
+
+      <h3>3. <a href="https://surfshark.com" target="_blank" style="color:var(--accent);">Surfshark</a> — La más barata para muchos dispositivos</h3>
+      <p>Conexiones ilimitadas con una sola suscripción. No cobra por usuario, lo que la hace muy atractiva para equipos con muchos dispositivos. Incluye Surfshark Alert, que avisa cuando las credenciales de tu empresa aparecen en filtraciones de datos, algo especialmente útil para monitorizar la exposición de cuentas corporativas.</p>
+
+      <h3>4. <a href="https://cisco.com" target="_blank" style="color:var(--accent);">Cisco AnyConnect</a> — Para empresas medianas y grandes</h3>
+      <p>El estándar del sector para empresas con departamento IT propio. Mayor control, más opciones de personalización e integración con infraestructura empresarial existente. Considerablemente más cara y compleja que las anteriores. Solo tiene sentido con un equipo técnico que la gestione.</p>
+
+      <h3>5. <a href="https://protonvpn.com" target="_blank" style="color:var(--accent);">Proton VPN</a> — Si la privacidad es lo primero</h3>
+      <p>De los creadores de ProtonMail. Código abierto, auditado de forma independiente, sede en Suiza. Para despachos de abogados, consultoras financieras o cualquier negocio que maneje información especialmente sensible, Proton VPN ofrece las garantías de privacidad más sólidas del mercado. Tiene plan gratuito limitado y planes de pago accesibles.</p>
+
+      <h2>La VPN es solo el primer paso</h2>
+      <p>Con una VPN cubres las comunicaciones. Pero los ataques más comunes no vienen por ahí. Vienen por contraseñas débiles reutilizadas, por empleados que hacen clic en phishing y por datos sin cifrar en el ordenador robado.</p>
+      <p>Las tres medidas que más impacto tienen junto a la VPN: autenticación de doble factor en todas las cuentas críticas (gratuita, bloquea la mayoría de ataques de contraseña), un gestor de contraseñas como <a href="https://bitwarden.com" target="_blank" style="color:var(--accent);">Bitwarden</a> o <a href="https://1password.com" target="_blank" style="color:var(--accent);">1Password</a>, y backups automáticos en dos ubicaciones distintas.</p>
+
+      <h2>Lo que cuesta</h2>
+      <p>NordVPN Teams desde 7-9€ por usuario al mes. Bitwarden plan gratuito para equipos pequeños. 2FA gratuito en todos los servicios. Con menos de 15€ mensuales por persona tienes cubierto el 80% de los vectores de ataque más comunes contra empresas pequeñas.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo puede contener enlaces de afiliado. Si contratas alguno de los servicios a través de nuestros enlaces no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: INMOBILIARIA + MAKE + WHATSAPP ==================== -->
+  <div id="article-inmobiliaria-make" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Tutorial real</div>
+      <h1>Cómo automatizar una inmobiliaria española con Make y WhatsApp paso a paso</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Un flujo concreto y funcional para que tu inmobiliaria responda leads, cualifique clientes y programe visitas automáticamente, sin estar pendiente del móvil.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>11 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>El problema no es la falta de leads. Una inmobiliaria mediana en España recibe entre 20 y 80 consultas por semana entre Idealista, Fotocasa, Instagram y su propia web. El problema es el tiempo de respuesta. El cliente que escribe a las 22:00 y no recibe respuesta hasta las 9:00 del día siguiente ya ha contactado con otras tres agencias.</p>
+      <p>Este artículo no es una lista de herramientas. Es el flujo exacto, paso a paso, para automatizar la captación y cualificación de leads usando Make y WhatsApp. Sin tocar el móvil a deshoras.</p>
+
+      <h2>El problema concreto que resuelve este flujo</h2>
+      <p>Sin automatización, el proceso típico es: lead llega a las 22:00 por Idealista → nadie responde hasta el día siguiente → el cliente ya ha contactado con otra agencia → operación perdida.</p>
+      <p>Con el flujo que vamos a montar: lead llega a las 22:00 → recibe WhatsApp en 30 segundos → responde un cuestionario automático → si es un lead cualificado, te llega una notificación y queda registrado en tu CRM con toda la información. Sin que hayas tocado el móvil.</p>
+
+      <h2>Lo que necesitas antes de empezar</h2>
+      <ul>
+        <li><strong>Cuenta en Make</strong> (plan gratuito suficiente para empezar)</li>
+        <li><strong>WhatsApp Business API</strong> — necesitas acceder a través de un proveedor como 360dialog o Twilio. El coste es de unos 5-10€/mes</li>
+        <li><strong>Formulario de contacto</strong> en tu web (Tally o Typeform, ambos gratuitos)</li>
+        <li><strong>Google Sheets o Notion</strong> como CRM básico si no tienes uno</li>
+      </ul>
+
+      <div class="article-cta-box">
+        <p>Crea tu cuenta gratuita en Make antes de seguir. El plan gratuito incluye 1.000 operaciones al mes, suficiente para empezar.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Crear cuenta en Make gratis →</a>
+      </div>
+
+      <h2>El flujo paso a paso</h2>
+
+      <h3>Paso 1 — El lead entra por el formulario web</h3>
+      <p>Cuando alguien rellena el formulario de tu web (nombre, teléfono, qué busca, presupuesto), Tally o Typeform envían automáticamente esa información a Make mediante un webhook. Este es el disparador de todo el flujo.</p>
+      <p>En Make, creas un nuevo escenario y seleccionas como módulo de inicio: <strong>Webhooks → Custom webhook</strong>. Make te da una URL que pegas en la configuración de Tally. Desde ese momento, cada formulario enviado activa el escenario.</p>
+
+      <h3>Paso 2 — WhatsApp de bienvenida automático</h3>
+      <p>El primer módulo tras el webhook envía un WhatsApp al número que dejó el cliente. Para ello conectas Make con tu proveedor de WhatsApp Business API (360dialog recomendado por ser el más económico para volumen bajo).</p>
+      <p>El mensaje de bienvenida puede ser algo como: <em>"Hola [nombre], soy el asistente de [tu inmobiliaria]. He recibido tu consulta sobre [tipo de propiedad]. Para encontrarte las mejores opciones, ¿puedes confirmarme tu presupuesto máximo?"</em></p>
+      <p>Este mensaje se personaliza automáticamente con los datos del formulario. El cliente lo recibe en menos de 30 segundos, a cualquier hora.</p>
+
+      <h3>Paso 3 — Cualificación automática con preguntas</h3>
+      <p>Dependiendo de la respuesta del cliente, el flujo puede ramificarse. Puedes configurar un árbol de preguntas básico:</p>
+      <ul>
+        <li>¿Buscas para comprar o alquilar?</li>
+        <li>¿Cuál es tu presupuesto?</li>
+        <li>¿Tienes financiación aprobada o necesitas hipoteca?</li>
+        <li>¿Para cuándo necesitas el inmueble?</li>
+      </ul>
+      <p>En Make esto se gestiona con módulos de <strong>Router</strong> que bifurcan el flujo según las respuestas. No es programación, es arrastrar y conectar bloques visualmente.</p>
+
+      <h3>Paso 4 — Registro automático en el CRM</h3>
+      <p>Una vez que el cliente ha respondido, Make añade automáticamente una fila en tu Google Sheet o crea una ficha en Notion con todos los datos: nombre, teléfono, qué busca, presupuesto, si tiene financiación y la fecha del contacto. Todo organizado sin que hayas escrito nada.</p>
+
+      <h3>Paso 5 — Notificación al agente</h3>
+      <p>Si el lead cumple ciertos criterios (presupuesto dentro del rango, financiación lista, búsqueda urgente), Make te envía una notificación por WhatsApp o email con un resumen del lead cualificado. Así sabes exactamente a quién llamar primero cada mañana.</p>
+
+      <h3>Paso 6 — Seguimiento automático si no responde</h3>
+      <p>Si el cliente no responde al primer WhatsApp en 24 horas, Make puede enviar automáticamente un segundo mensaje de seguimiento. Si tampoco responde, lo marca como "frío" en el CRM y lo archiva. Sin que tengas que recordarlo manualmente.</p>
+
+      <h2>Cuánto tiempo lleva montarlo</h2>
+      <p>Con Make y los conocimientos básicos de la plataforma, este flujo completo se puede montar en una tarde de trabajo, unas 3-4 horas. La parte más lenta es configurar el acceso a la API de WhatsApp Business, que puede requerir verificación de la cuenta de empresa (24-48 horas en 360dialog).</p>
+
+      <h2>Qué resultados puedes esperar</h2>
+      <p>El impacto más inmediato es el tiempo de respuesta: de horas a segundos. Y en el sector inmobiliario, responder primero marca la diferencia. Inmobiliarias que han implementado flujos similares reportan una reducción del 60-70% en leads perdidos por falta de respuesta rápida.</p>
+
+      <div class="article-cta-box">
+        <p>Make tiene plantillas prehechas para inmobiliarias que puedes adaptar en minutos. Empieza gratis.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Ver plantillas de Make →</a>
+      </div>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: GESTORÍA + IA ==================== -->
+  <div id="article-gestoria-ia" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Caso práctico</div>
+      <h1>Cómo una gestoría puede ahorrar 10 horas semanales con IA: el flujo completo</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">No es teoría. Es el flujo concreto de automatización que puede aplicar cualquier gestoría española para eliminar las tareas más repetitivas de su semana.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>10 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay un tipo de trabajo que se hace en todas las gestorías y que nadie llama por su nombre: el trabajo de recadero. Enviar un email al cliente pidiéndole la factura. Esperar. Recordarle. Esperar otra vez. Cuando llega, pasarla a mano al programa de gestión. Archivarla en la carpeta correcta. Avisar al cliente de que la hemos recibido. Repetir con los 40 clientes del trimestre.</p>
+      <p>Eso no es asesoramiento fiscal. Es logística. Y toda esa logística se puede automatizar.</p>
+
+      <h2>Dónde se va realmente el tiempo</h2>
+      <p>Antes de ponerse a instalar herramientas, vale la pena identificar con honestidad dónde se pierde el tiempo en tu gestoría concreta. En la mayoría el patrón es similar:</p>
+      <ul>
+        <li><strong>Pedir documentación:</strong> 2-3 horas semanales enviando emails y WhatsApps pidiendo facturas, nóminas y justificantes</li>
+        <li><strong>Introducir datos manualmente:</strong> 2-3 horas semanales pasando cifras de documentos a hojas de cálculo o al software de gestión</li>
+        <li><strong>Comunicaciones repetitivas:</strong> 1-2 horas semanales confirmando recepciones, avisando de declaraciones listas, recordando vencimientos</li>
+        <li><strong>Organizar archivos:</strong> 1-2 horas semanales renombrando, moviendo y archivando documentos</li>
+      </ul>
+      <p>Son entre 6 y 10 horas semanales. Ninguna de esas tareas requiere el criterio de un asesor fiscal. Todas se pueden automatizar.</p>
+
+      <h2>Las 5 automatizaciones por orden de impacto</h2>
+
+      <h3>1. Recoger documentación sin perseguir al cliente</h3>
+      <p>En vez de enviar emails manualmente, configura un formulario en <a href="https://tally.so" target="_blank" style="color:var(--accent);">Tally</a> (gratuito) donde el cliente sube sus documentos directamente. <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" style="color:var(--accent);">Make</a> los recoge, los guarda en la carpeta correcta de Google Drive con el nombre y fecha del cliente y te avisa cuando están listos. Si el cliente no ha subido nada en X días, Make le manda un recordatorio automático. Sin que tú tengas que acordarte de nadie.</p>
+
+      <h3>2. Extraer datos de facturas automáticamente</h3>
+      <p>Esta es la que más tiempo ahorra. Cuando llega una factura al formulario o por email, Make con módulos de IA puede extraer los datos clave (proveedor, fecha, importe, IVA, concepto) y volcarlos directamente en tu hoja de cálculo o en <a href="https://www.holded.com" target="_blank" style="color:var(--accent);">Holded</a> sin que toques nada. Para una gestoría con volumen medio, esto puede ser 2-3 horas semanales recuperadas solo en este punto.</p>
+
+      <div class="article-cta-box">
+        <p>Make tiene módulos de IA que extraen datos de facturas automáticamente. Plan gratuito disponible.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Probar Make gratis →</a>
+      </div>
+
+      <h3>3. Emails automáticos con contexto</h3>
+      <p>Confirmación de que hemos recibido los documentos, aviso de que la declaración está lista, recordatorio de que el trimestre vence en 10 días. <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> puede generar el borrador personalizado con el nombre del cliente y los datos concretos. Make puede enviarlo automáticamente cuando se cumple la condición, sin que nadie del equipo tenga que escribir nada.</p>
+
+      <h3>4. Archivar documentos solos</h3>
+      <p>Cuando llega un email con un adjunto, Make detecta de qué tipo de documento se trata, lo renombra con el formato correcto, identifica a qué cliente pertenece y lo guarda en su carpeta en Drive. Lo que antes era arrastrar archivos manualmente pasa a ocurrir solo en segundos.</p>
+
+      <h3>5. Recordatorios de plazos fiscales</h3>
+      <p>Una hoja de cálculo con los vencimientos de cada cliente. Make la monitoriza y envía recordatorios automáticos a ti y al cliente con la antelación que configures. El vencimiento del modelo 303 del trimestre no se olvida porque Make lo recuerda por ti.</p>
+
+      <h2>El orden para implementarlo sin agobiarse</h2>
+      <p>Semana 1: formulario de Tally conectado a Google Drive con Make. Semana 2: recordatorios automáticos a clientes que no han enviado documentación. Semana 3: extracción de datos de facturas. Semana 4: comunicaciones estándar automatizadas. Al final del mes tienes el sistema básico funcionando y puedes medir el tiempo recuperado.</p>
+
+      <h2>Lo que cuesta</h2>
+      <p>Make plan Core: 9€/mes. Tally: gratuito. Google Drive: gratuito o incluido en Workspace. Claude API si la usas para extracción: 5-15€/mes según volumen. Entre 9€ y 25€ al mes para recuperar horas que se pueden dedicar a facturar más o a atender mejor a los clientes actuales.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: MAKE TUTORIAL ==================== -->
+  <div id="article-make-tutorial" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Tutorial paso a paso</div>
+      <h1>Make para principiantes: tutorial completo con ejemplos reales en español</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Desde cero hasta tu primera automatización funcionando. Sin saber programar, con ejemplos concretos y en español.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>12 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Si buscas "tutorial de Make" en YouTube, casi todo está en inglés y usa ejemplos que no tienen nada que ver con un negocio en España. Este artículo es diferente: en español, con los pasos exactos que verías en pantalla y con un ejemplo que cualquier negocio puede replicar hoy mismo.</p>
+      <p>Make no es complicado. Tiene fama de serlo porque la mayoría de recursos están pensados para perfiles técnicos. Pero la lógica es simple: algo ocurre, y Make hace cosas en respuesta. Eso es todo.</p>
+
+      <h2>La lógica en dos minutos</h2>
+      <p>Make funciona con <strong>escenarios</strong>. Un escenario es una cadena de pasos que se activa automáticamente cuando ocurre algo. Cada escenario tiene un <strong>disparador</strong> (el evento que lo activa) y uno o varios <strong>módulos</strong> (las acciones que ejecuta).</p>
+      <p>Ejemplo concreto: alguien rellena tu formulario de contacto (disparador) → Make guarda sus datos en Google Sheets (módulo 1) → envía un email de confirmación al cliente (módulo 2) → te manda una notificación por WhatsApp (módulo 3). Todo en segundos, sin que nadie haga nada.</p>
+
+      <h2>Paso 1 — Crear la cuenta</h2>
+      <p>Entra en make.com y crea una cuenta. El plan gratuito incluye 1.000 operaciones al mes y acceso a todas las integraciones. Es suficiente para aprender y montar tus primeros flujos sin pagar nada.</p>
+      <p>Una vez dentro verás tres secciones en el menú izquierdo: Scenarios (tus automatizaciones), Templates (plantillas listas para adaptar) y Connections (las apps que autorizas). Empieza por Templates si quieres inspiración, o por Scenarios si ya sabes lo que quieres montar.</p>
+
+      <div class="article-cta-box">
+        <p>Crea tu cuenta gratuita en Make y sigue el tutorial con la plataforma abierta en paralelo.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Crear cuenta gratis en Make →</a>
+      </div>
+
+      <h2>Paso 2 — Tu primera automatización: formulario a Google Sheets</h2>
+      <p>Vamos a montar la automatización más útil para cualquier negocio: cuando alguien rellena un formulario, sus datos se guardan automáticamente en una hoja de cálculo. Sin más.</p>
+
+      <h3>Crear el escenario</h3>
+      <p>En Make, haz clic en "Create a new scenario". Verás un lienzo en blanco con un círculo en el centro. Ese círculo es el punto de entrada. Haz clic en él.</p>
+
+      <h3>Añadir el disparador</h3>
+      <p>Se abre un buscador. Escribe "Tally" (o Google Forms si lo prefieres). Selecciona la app y elige el trigger "Watch Responses". Make te pedirá conectar tu cuenta de Tally, te redirige para autorizar y vuelves automáticamente. Disparador listo.</p>
+
+      <h3>Añadir Google Sheets</h3>
+      <p>Haz clic en el "+" que aparece a la derecha del disparador. Busca "Google Sheets" y selecciona "Add a Row". Conecta tu cuenta de Google, elige el spreadsheet y la hoja donde quieres guardar los datos.</p>
+      <p>Ahora mapeas los campos: Make te muestra a la izquierda las columnas de tu hoja y a la derecha los datos del formulario. Arrastras cada campo a su columna. Nombre → columna Nombre. Email → columna Email. Listo.</p>
+
+      <h3>Probar y activar</h3>
+      <p>Haz clic en "Run once" para probar. Rellena el formulario de prueba y comprueba que los datos aparecen en tu hoja. Si funciona, activa el escenario con el toggle de "Scheduling" abajo a la izquierda. Desde ese momento funciona solo, 24/7, sin que nadie tenga que hacer nada.</p>
+
+      <h2>Paso 3 — Añadir el email de confirmación</h2>
+      <p>Haz clic en "+" después del módulo de Sheets. Busca "Gmail" y selecciona "Send an Email". En el campo "To" selecciona el campo Email que viene del formulario. Escribe el asunto y el cuerpo usando los datos del formulario para personalizarlo: "Hola [Nombre], hemos recibido tu consulta..."</p>
+      <p>Guarda y prueba. Ahora el formulario guarda los datos Y envía el email. Dos cosas automáticas con un solo clic del usuario.</p>
+
+      <h2>Los errores que comete todo el mundo al empezar</h2>
+      <ul>
+        <li><strong>Usar "Run once" creyendo que activa el escenario.</strong> No. "Run once" es solo para probar. Para que funcione solo hay que activar el toggle de Scheduling.</li>
+        <li><strong>No entender las operaciones.</strong> Cada acción que ejecuta Make consume una operación. Un escenario con 3 módulos consume 3 operaciones por ejecución. Con 1.000 operaciones gratuitas al mes tienes para empezar tranquilamente.</li>
+        <li><strong>Ignorar el historial de errores.</strong> Cuando algo falla, Make guarda el error con detalle. Antes de buscar soluciones en foros, revisa ahí.</li>
+        <li><strong>Querer montarlo todo de golpe.</strong> Empieza con 2 módulos. Cuando funcione, añade un tercero. La complejidad se añade incremental, no de golpe.</li>
+      </ul>
+
+      <h2>5 automatizaciones para hacer justo después</h2>
+      <ul>
+        <li><strong>Formulario → CRM:</strong> igual pero con HubSpot o Notion en vez de Sheets</li>
+        <li><strong>Email con factura adjunta → Google Drive:</strong> guarda automáticamente en la carpeta correcta</li>
+        <li><strong>Nuevo cliente en Sheets → email de bienvenida:</strong> cada vez que añades una fila, el cliente recibe un email</li>
+        <li><strong>Formulario → WhatsApp:</strong> con 360dialog en vez de Gmail</li>
+        <li><strong>Nueva reseña en Google → notificación:</strong> te avisa al instante para responder rápido</li>
+      </ul>
+
+      <h2>Dónde seguir aprendiendo</h2>
+      <p>Las plantillas de Make (sección Templates) son la mejor fuente de inspiración: hay cientos de flujos prehechos que puedes adaptar en minutos. La comunidad en community.make.com tiene respuestas para prácticamente cualquier duda, aunque está principalmente en inglés.</p>
+
+      <div class="article-cta-box">
+        <p>El plan gratuito es suficiente para aprender y montar tus primeros flujos reales.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar gratis con Make →</a>
+      </div>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: HYNOTE REUNIONES ==================== -->
+  <div id="article-hynote-reuniones" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Productividad</div>
+      <h1>Cómo ahorrar 5 horas semanales en reuniones con IA</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Tutorial práctico para transcribir, resumir y extraer tareas de tus reuniones automáticamente. Sin tomar notas manualmente nunca más.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>9 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Hay una ironía en las reuniones de trabajo: cuanto más intentas tomar notas completas, menos estás presente en la conversación. Y cuanto menos notas tomas, más tiempo pierdes después intentando recordar qué se decidió exactamente y quién se comprometió a qué.</p>
+      <p>HyNote resuelve ese problema de una forma muy simple: graba la reunión, la transcribe y extrae los puntos de acción automáticamente. Tú puedes estar en la conversación. La documentación se hace sola.</p>
+
+      <h2>Por qué las notas manuales son el problema</h2>
+      <p>Tomar notas durante una reunión no es gratis. Tiene un coste que no solemos calcular: mientras escribes, dejas de escuchar. Mientras escuchas, no escribes todo. Y al final tienes notas incompletas que luego requieren 20-30 minutos de postprocesado para convertirlas en algo útil.</p>
+      <p>Con 5 reuniones semanales, eso son casi 2 horas semanales solo en procesar notas. Sin contar el tiempo de tomarlas.</p>
+
+      <h2>Cómo funciona HyNote en la práctica</h2>
+
+      <h3>Antes de la reunión</h3>
+      <p>Abres HyNote en el móvil o el navegador y creas una nueva nota. Puedes añadir el contexto: el orden del día, documentos relevantes o el email de convocatoria. HyNote los analiza y los tiene en cuenta para el resumen posterior. No es obligatorio, pero mejora la calidad de la transcripción.</p>
+
+      <h3>Durante la reunión</h3>
+      <p>Pulsas el botón de grabación y te olvidas. HyNote transcribe en tiempo real con buena precisión en español, incluyendo acentos y terminología técnica. Si la reunión es por Zoom o Google Meet, puede grabar directamente desde el ordenador sin que aparezca ningún bot como participante. Para reuniones presenciales, el móvil en la mesa es suficiente.</p>
+
+      <h3>Después de la reunión</h3>
+      <p>En segundos tienes: resumen ejecutivo de los puntos tratados, lista de puntos de acción con los responsables mencionados, transcripción completa búscable por palabras, y la posibilidad de hacer preguntas sobre el contenido de la reunión. Todo se puede exportar a Google Docs, Notion o PDF con un clic.</p>
+
+      <div class="article-cta-box">
+        <p>HyNote tiene plan gratuito. Pruébalo en tu próxima reunión y comprueba tú mismo.</p>
+        <a href="https://go.hynote.ai/6kgE2b" target="_blank">Probar HyNote gratis →</a>
+      </div>
+
+      <h2>Quién lo aprovecha más</h2>
+
+      <h3>Abogados y asesores</h3>
+      <p>La reunión con el cliente queda transcrita con los compromisos, plazos y dudas pendientes. El expediente se actualiza con datos precisos sin depender de la memoria ni de notas apresuradas.</p>
+
+      <h3>Comerciales y equipos de ventas</h3>
+      <p>Cada llamada con un prospecto queda documentada. El CRM se puede actualizar con los puntos clave sin que el comercial tenga que escribir nada después de colgar. Más tiempo vendiendo, menos tiempo administrando.</p>
+
+      <h3>Managers y directivos</h3>
+      <p>Las reuniones de equipo quedan documentadas sin que nadie tenga que hacer de secretario. Los puntos de acción se extraen solos y se pueden integrar con herramientas como <a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion</a> o <a href="https://asana.com" target="_blank" style="color:var(--accent);">Asana</a>.</p>
+
+      <h3>Consultores y freelancers</h3>
+      <p>La transcripción es la prueba objetiva de qué se acordó. Elimina malentendidos con clientes sobre el alcance, los plazos y las responsabilidades.</p>
+
+      <h2>El tiempo que recuperas realmente</h2>
+      <p>Para alguien con 5 reuniones semanales de una hora: tomar notas durante la reunión son unos 30 minutos por reunión que desaparecen. Pasar las notas a limpio y redactar el acta son otros 20 minutos por reunión. Enviar el resumen al equipo, 10 minutos más. En total, casi 5 horas semanales que se pueden dedicar a trabajo real.</p>
+
+      <div class="article-cta-box">
+        <p>El plan gratuito de HyNote es suficiente para empezar. Sin tarjeta de crédito.</p>
+        <a href="https://go.hynote.ai/6kgE2b" target="_blank">Crear cuenta gratuita en HyNote →</a>
+      </div>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a HyNote. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: HYNOTE VS ==================== -->
+  <div id="article-hynote-vs" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Comparativa</div>
+      <h1>HyNote vs Otter vs Notion AI: cuál elegir para tu empresa en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Comparativa honesta de las tres mejores herramientas IA para notas y reuniones. Sin publicidad. Solo lo que necesitas saber para elegir bien.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>8 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Las tres aparecen en cualquier búsqueda sobre herramientas IA para reuniones. Las tres hacen cosas parecidas. Pero no son intercambiables, y elegir la equivocada significa pagar por funciones que no usas o no tener las que necesitas.</p>
+      <p>Esta comparativa va al grano: para qué sirve cada una, dónde falla y cuál tiene más sentido según tu caso concreto.</p>
+
+      <h2>La respuesta rápida</h2>
+      <ul>
+        <li><strong><a href="https://go.hynote.ai/6kgE2b" target="_blank" style="color:var(--accent);">HyNote</a></strong> — transcripción de reuniones en español, sin bot, múltiples tipos de fuentes</li>
+        <li><strong><a href="https://otter.ai" target="_blank" style="color:var(--accent);">Otter.ai</a></strong> — integración nativa con Zoom, mejor para reuniones en inglés</li>
+        <li><strong><a href="https://notion.com" target="_blank" style="color:var(--accent);">Notion AI</a></strong> — IA dentro de Notion, no graba reuniones, para gestión de notas existentes</li>
+      </ul>
+
+      <h2>HyNote — La más completa para el mercado español</h2>
+      <p>HyNote tiene tres ventajas concretas que la hacen especialmente útil en España.</p>
+      <p>Primero, el español. Otter.ai tiene problemas reales con acentos regionales y terminología técnica en castellano. HyNote maneja el español con mejor precisión. Para reuniones en español, esta diferencia se nota.</p>
+      <p>Segundo, sin bot. Otter entra a la reunión como un participante más. En reuniones con clientes externos o en contextos formales, ese "bot de grabación" puede resultar incómodo o generar preguntas. HyNote graba directamente desde el dispositivo sin aparecer en la sala.</p>
+      <p>Tercero, múltiples fuentes. HyNote no solo graba reuniones: puedes subir PDFs, vídeos de YouTube, páginas web e imágenes, y los organiza junto con tus notas de reunión. Es una herramienta de gestión del conocimiento, no solo un transcriptor.</p>
+      <p>Plan gratuito disponible. Premium desde $9.99/mes.</p>
+
+      <div class="article-cta-box">
+        <p>HyNote tiene plan gratuito sin tarjeta de crédito. Pruébalo en tu próxima reunión.</p>
+        <a href="https://go.hynote.ai/6kgE2b" target="_blank">Probar HyNote gratis →</a>
+      </div>
+
+      <h2>Otter.ai — La más integrada con Zoom</h2>
+      <p>Otter lleva más años en el mercado y tiene la integración más fluida con Zoom, Google Meet y Teams. Su bot entra automáticamente, toma notas en tiempo real y las sincroniza con todos los participantes que tengan Otter.</p>
+      <p>El problema para el mercado español es claro: su precisión en español es inferior y su plan gratuito es muy limitado en minutos de transcripción. Para equipos que trabajan principalmente en inglés y usan Zoom como plataforma central, Otter es una opción sólida. Para el resto, HyNote suele ser mejor opción.</p>
+      <p>Plan gratuito muy limitado. Pro desde $16.99/mes.</p>
+
+      <div class="article-cta-box">
+        <p>Prueba Otter.ai gratis si tu equipo trabaja principalmente en inglés.</p>
+        <a href="https://otter.ai" target="_blank">Probar Otter.ai gratis →</a>
+      </div>
+
+      <h2>Notion AI — Para los que ya viven en Notion</h2>
+      <p>Importante aclaración: Notion AI no graba reuniones. No es un competidor directo de HyNote ni Otter en ese sentido. Es IA integrada dentro de Notion que resume notas que ya tienes escritas, genera contenido y busca información en tu base de conocimiento.</p>
+      <p>Si ya usas Notion como sistema central de trabajo y quieres IA dentro de ese ecosistema, añadir Notion AI tiene mucho sentido. Si lo que buscas es transcripción y resumen automático de reuniones, Notion AI no es la herramienta. Lo que sí puedes hacer es combinarlas: HyNote para la transcripción, Notion AI para organizar y trabajar con esa información después.</p>
+      <p>8€/mes adicionales sobre el plan de Notion.</p>
+
+      <div class="article-cta-box">
+        <p>Notion AI tiene sentido si ya usas Notion intensivamente en tu trabajo diario.</p>
+        <a href="https://notion.com" target="_blank">Ver Notion AI →</a>
+      </div>
+
+      <h2>Cuál elegir según tu situación</h2>
+      <ul>
+        <li><strong>Reuniones principalmente en español:</strong> HyNote</li>
+        <li><strong>Equipo que vive en Zoom y trabaja en inglés:</strong> Otter.ai</li>
+        <li><strong>Ya usas Notion y quieres IA en tu sistema de notas:</strong> Notion AI</li>
+        <li><strong>Quieres transcripción + organización del conocimiento:</strong> HyNote + Notion AI</li>
+        <li><strong>Presupuesto cero para empezar:</strong> HyNote (el plan gratuito es el más útil de los tres)</li>
+      </ul>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a HyNote. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  
+  <!-- ==================== ARTÍCULO: RESTAURANTES ==================== -->
+  <div id="article-restaurantes-ia" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Hostelería</div>
+      <h1>IA para restaurantes: automatizar reservas, carta y atención al cliente en 2026</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Cómo los restaurantes españoles están usando inteligencia artificial para llenar mesas, reducir el trabajo manual y mejorar la experiencia del cliente.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>10 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Un restaurante en España compite con márgenes del 5-10%, escasez de personal y clientes que comparan en Google antes de decidir dónde comer. En ese contexto, cada hora que el equipo pasa respondiendo WhatsApps, gestionando reservas por teléfono o actualizando la carta manualmente es una hora que no está en la sala, en la cocina o en lo que realmente importa.</p>
+      <p>La IA no cocina. Pero sí puede hacerse cargo de las partes más mecánicas de la operación. Esto es lo que funciona en la práctica.</p>
+
+      <h2>Reservas: el proceso que más tiempo consume</h2>
+      <p>Gestionar reservas por teléfono requiere que alguien esté disponible para coger la llamada, apuntar datos, confirmar disponibilidad, llamar si hay cancelaciones y actualizar el sistema. Son interrupciones constantes en el servicio.</p>
+      <p>Con <a href="https://thefork.es" target="_blank" style="color:var(--accent);">TheFork Manager</a> o <a href="https://covermanager.com" target="_blank" style="color:var(--accent);">Covermanager</a> conectados a WhatsApp mediante <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank" style="color:var(--accent);">Make</a>, el flujo completo se automatiza: el cliente pide mesa por WhatsApp, el bot responde con disponibilidad en tiempo real, el cliente elige horario, recibe confirmación y recordatorio 24 horas antes. Si cancela, la mesa queda libre automáticamente. Nadie del restaurante interviene.</p>
+
+      <div class="article-cta-box">
+        <p>Make conecta tu sistema de reservas con WhatsApp automáticamente. Plan gratuito disponible.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Probar Make gratis →</a>
+      </div>
+
+      <h2>La carta digital: más que un PDF con QR</h2>
+      <p>Un PDF con QR es lo mínimo. Una carta digital bien implementada con <a href="https://flipdish.com" target="_blank" style="color:var(--accent);">Flipdish</a> o similar se actualiza en tiempo real desde el móvil, oculta automáticamente los platos agotados, muestra alérgenos sin que nadie tenga que preguntar y puede sugerir complementos o maridajes con IA. Los restaurantes que usan sugerencias automáticas en carta digital reportan aumentos reales en el ticket medio porque la sugerencia aparece en el momento correcto.</p>
+
+      <h2>Consultas repetitivas: el chatbot que trabaja mientras el equipo sirve</h2>
+      <p>Horario, dirección, si hay terraza, si admiten perros, si hay menú del día, si pueden ir con niños. Son siempre las mismas preguntas. <a href="https://tidio.com" target="_blank" style="color:var(--accent);">Tidio</a> instala un chatbot en tu web que las responde automáticamente, gratis. Para WhatsApp e Instagram necesitas conectarlo con <a href="https://manychat.com" target="_blank" style="color:var(--accent);">Manychat</a> o Make, desde 15€/mes.</p>
+
+      <h2>Reseñas: responder rápido importa más de lo que parece</h2>
+      <p>Google tiene en cuenta la actividad de respuesta a reseñas para el posicionamiento local. Responder en menos de 24 horas mejora la visibilidad. El problema es que responder bien cada reseña lleva tiempo. <a href="https://claude.ai" target="_blank" style="color:var(--accent);">Claude</a> genera respuestas personalizadas en segundos adaptando el tono: agradecido para las positivas, empático y resolutivo para las negativas. Make puede avisarte cuando llega una reseña nueva para que no se te pase ninguna.</p>
+
+      <h2>Redes sociales: el menú del día no puede esperar a que alguien tenga tiempo</h2>
+      <p>Publicar el menú del día cada mañana, anunciar eventos o compartir fotos de platos requiere tiempo y constancia. Con Claude generas los textos en segundos y con <a href="https://metricool.com" target="_blank" style="color:var(--accent);">Metricool</a> programas toda la semana en una sesión de 30 minutos. El contenido sale solo el día y hora correctos sin que nadie tenga que acordarse.</p>
+
+      <h2>Por dónde empezar sin agobiarse</h2>
+      <p>El orden que tiene más sentido: primero el chatbot de WhatsApp para consultas (impacto inmediato, coste cero con Tidio en la web). Cuando eso funcione, automatizar las reservas con Make. Luego las reseñas y finalmente las redes sociales. Cada paso libera tiempo para el siguiente.</p>
+      <p>El coste total del sistema básico está entre 15€ y 40€ al mes. Para un restaurante con facturación media, eso es menos del 0,2% de los ingresos a cambio de varias horas diarias de trabajo mecánico eliminado.</p>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ARTÍCULO: FACTURACIÓN MAKE + HOLDED ==================== -->
+  <div id="article-facturacion-make-holded" class="article-page">
+    <button class="article-back" onclick="navigate('home')">← Volver al inicio</button>
+    <div class="article-header">
+      <div class="article-cat">Tutorial real</div>
+      <h1>Cómo automatizar la facturación de tu empresa con Make y Holded paso a paso</h1>
+      <p style="color:var(--muted); font-size:0.95rem;">Facturas generadas, enviadas y registradas automáticamente. El flujo completo para que no tengas que tocar nada después de configurarlo una vez.</p>
+      <div class="article-meta"><span>1 mayo 2026</span><span>·</span><span>11 min lectura</span></div>
+    </div>
+    <div class="article-body">
+      <p>Crear una factura manualmente lleva unos 5 minutos. Enviarla, otros 2. Hacer seguimiento cuando no pagan, otros 5. Registrar el cobro cuando finalmente llega, otros 3. Para un autónomo con 20 clientes al mes, eso son casi 5 horas mensuales en gestión administrativa de facturación. Cinco horas que no generan ningún valor.</p>
+      <p>Este tutorial explica cómo automatizar ese proceso completo con Make y Holded: la factura se genera sola, se envía sola, hace seguimiento sola y registra el cobro sola. Sin que tú toques nada.</p>
+
+      <h2>Por qué Make + Holded para España</h2>
+      <p><a href="https://www.holded.com" target="_blank" style="color:var(--accent);">Holded</a> es el software de gestión más usado entre autónomos y pymes españolas. Cumple con los requisitos fiscales españoles, tiene facturación, contabilidad, CRM y proyectos integrados, y su API permite que Make automatice cualquier acción dentro de la plataforma.</p>
+      <p>Make actúa como el cerebro que conecta todo: cuando ocurre algo en cualquier herramienta (un proyecto se cierra, llega un pago, se añade un cliente), Make ejecuta automáticamente las acciones correspondientes en Holded.</p>
+
+      <div class="article-cta-box">
+        <p>Make tiene plan gratuito. Puedes montar este flujo sin pagar nada para probarlo.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Crear cuenta en Make gratis →</a>
+      </div>
+
+      <h2>El flujo paso a paso</h2>
+
+      <h3>Paso 1 — Conectar Make con Holded</h3>
+      <p>En Make ve a Connections y busca Holded. Necesitas la API Key de tu cuenta de Holded: está en Configuración → Integraciones → API. Cópiala, pégala en Make y la conexión queda activa. A partir de aquí Make puede crear, editar y consultar datos en Holded sin intervención tuya.</p>
+
+      <h3>Paso 2 — Elegir cuándo se genera la factura</h3>
+      <p>El disparador depende de cómo trabajes. Las opciones más habituales:</p>
+      <ul>
+        <li><strong>Proyecto cerrado en Holded:</strong> cuando marcas un proyecto como completado, Make genera la factura automáticamente</li>
+        <li><strong>Nueva fila en Google Sheets:</strong> si llevas el control de servicios en un spreadsheet, cada entrada genera su factura</li>
+        <li><strong>Formulario de pedido en la web:</strong> el cliente hace el pedido, Make crea la factura al instante</li>
+        <li><strong>Fecha fija mensual:</strong> para clientes de retainer, la factura sale el mismo día de cada mes sin que nadie haga nada</li>
+      </ul>
+
+      <h3>Paso 3 — Crear la factura en Holded</h3>
+      <p>El módulo "Create Invoice" de Make para Holded recibe los datos del disparador y crea la factura: cliente, concepto, importe, IVA, fecha de vencimiento. Make puede calcular la fecha de vencimiento automáticamente según las condiciones de pago de cada cliente. Holded genera el PDF con tu logo y datos fiscales correctos.</p>
+
+      <h3>Paso 4 — Enviarla automáticamente</h3>
+      <p>El siguiente módulo envía la factura por email al cliente directamente desde tu dirección de correo. El mensaje puede estar personalizado con el nombre del cliente y el número de factura. No tienes que descargar nada ni abrir Holded.</p>
+
+      <h3>Paso 5 — Seguimiento de impagados automático</h3>
+      <p>Esta es la parte más valiosa. Make revisa diariamente las facturas pendientes en Holded. Cuando una lleva más de X días sin pagarse, envía automáticamente un recordatorio al cliente. Puedes configurar la secuencia: recordatorio suave a los 7 días, más directo a los 15, notificación a ti si supera los 30. Sin que tengas que acordarte de ningún cliente concreto.</p>
+
+      <h3>Paso 6 — Registrar el cobro</h3>
+      <p>Si usas <a href="https://stripe.com" target="_blank" style="color:var(--accent);">Stripe</a> o PayPal para cobrar, Make detecta el pago y lo marca como cobrado en Holded automáticamente. El cuadre contable ocurre en tiempo real sin intervención manual.</p>
+
+      <h2>Variaciones según tu tipo de negocio</h2>
+      <ul>
+        <li><strong>Clientes de retainer:</strong> factura automática el día 1 de cada mes, siempre</li>
+        <li><strong>Facturación por horas:</strong> si registras horas en <a href="https://toggl.com" target="_blank" style="color:var(--accent);">Toggl</a> o <a href="https://clockify.me" target="_blank" style="color:var(--accent);">Clockify</a>, Make calcula el importe y genera la factura al cerrar el período</li>
+        <li><strong>Notificaciones al equipo:</strong> cuando se cobra una factura importante, Make avisa por Slack o email</li>
+      </ul>
+
+      <h2>Tiempo de configuración vs tiempo ahorrado</h2>
+      <p>Montar este flujo desde cero lleva entre 2 y 4 horas la primera vez. A partir de entonces funciona solo indefinidamente. Para un autónomo con 15-20 clientes mensuales, recuperas esa inversión de tiempo en el primer mes.</p>
+      <p>Coste: Holded desde 14€/mes, Make Core 9€/mes. Total 23€/mes para eliminar horas de administrativo que no aportan ningún valor.</p>
+
+      <div class="article-cta-box">
+        <p>Holded y Make tienen ambos plan gratuito. Puedes probar el flujo antes de comprometerte con ninguno.</p>
+        <a href="https://www.make.com/en/register?pc=ianegocios" target="_blank">Empezar con Make gratis →</a>
+      </div>
+
+      <div class="article-divider"></div>
+      <p style="color:var(--muted); font-size:0.9rem;">Este artículo contiene enlaces de afiliado a Make. Si te registras a través de nuestro enlace no pagas nada adicional.</p>
+    </div>
+  </div>
+
+  <script>
+    // ── DATA: artículos para el buscador ──────────────────────────────
+    const ARTICLES = [
+      { id: 'inmobiliarias', title: 'Mejor IA para inmobiliarias en 2026', cat: 'Sector inmobiliario', keywords: 'inmobiliaria agencia pisos compra venta' },
+      { id: 'whatsapp', title: 'Cómo automatizar WhatsApp con IA', cat: 'Automatización', keywords: 'whatsapp mensajes bot automatizar chatbot' },
+      { id: 'alternativas', title: 'Mejores alternativas a ChatGPT para empresas', cat: 'Comparativa', keywords: 'chatgpt alternativa claude gemini copilot mistral' },
+      { id: 'atencion', title: 'IA para la atención al cliente en 2026', cat: 'Atención al cliente', keywords: 'atencion cliente soporte chatbot tidio' },
+      { id: 'make', title: 'Make: qué es y por qué usarlo en tu negocio', cat: 'Automatización', keywords: 'make automatización zapier integromat flujos' },
+      { id: 'abogados', title: 'IA para abogados: las mejores implementaciones', cat: 'Sector legal', keywords: 'abogados despacho legal contratos juridico' },
+      { id: 'rrss', title: 'IA para crear contenido en redes sociales', cat: 'Marketing digital', keywords: 'redes sociales instagram tiktok contenido marketing' },
+      { id: 'ecommerce', title: 'Herramientas IA para tiendas online en 2026', cat: 'Ecommerce', keywords: 'ecommerce tienda online shopify woocommerce ventas' },
+      { id: 'vpn', title: 'Ciberseguridad para empresas: las mejores VPN', cat: 'Ciberseguridad', keywords: 'vpn seguridad ciberseguridad nordvpn datos privacidad' },
+      { id: 'inmobiliaria-make', title: 'Automatizar una inmobiliaria española con Make y WhatsApp', cat: 'Tutorial real', keywords: 'inmobiliaria make whatsapp automatizar leads captacion' },
+      { id: 'gestoria-ia', title: 'Cómo una gestoría puede ahorrar 10h/semana con IA', cat: 'Caso práctico', keywords: 'gestoria factura contabilidad automatizar horas' },
+      { id: 'make-tutorial', title: 'Make para principiantes: tutorial completo', cat: 'Tutorial paso a paso', keywords: 'make tutorial principiantes automatizacion paso a paso' },
+      { id: 'hynote-reuniones', title: 'Cómo ahorrar 5 horas semanales en reuniones con IA', cat: 'Productividad', keywords: 'reuniones notas hynote transcripcion productividad' },
+      { id: 'hynote-vs', title: 'HyNote vs Otter vs Notion AI: cuál elegir', cat: 'Comparativa', keywords: 'hynote otter notion comparativa notas reuniones' },
+    ];
+
+    // ── SPA NAVIGATION con historial ─────────────────────────────────
+    function navigate(target, pushState = true) {
+      // Ocultar home
+      document.getElementById('home').style.display = 'none';
+      // Ocultar todos los artículos y páginas
+      document.querySelectorAll('.article-page').forEach(p => {
+        p.style.display = 'none';
+        p.classList.remove('active');
+      });
+
+      if (target === 'home') {
+        document.getElementById('home').style.display = 'block';
+        if (pushState) try { history.pushState({ target }, '', location.pathname); } catch(e) {}
+      } else {
+        const el = document.getElementById(target);
+        if (el) {
+          el.style.display = 'block';
+          el.classList.add('active');
+        }
+        if (pushState) try { history.pushState({ target }, '', location.pathname + '?p=' + target); } catch(e) {}
+      }
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      setTimeout(() => { document.documentElement.style.scrollBehavior = ''; }, 50);
+    }
+
+    function showArticle(id) { navigate('article-' + id); }
+    function showPage(id) { navigate('page-' + id); }
+    function showHome() { navigate('home'); }
+
+    // Botón atrás / adelante del navegador
+    window.addEventListener('popstate', (e) => {
+      const target = e.state?.target || 'home';
+      navigate(target, false);
+    });
+
+    // ── BUSCADOR EN TIEMPO REAL ────────────────────────────────────────
+    function handleSearch(query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.ucard[data-id]');
+      const clearBtn = document.getElementById('searchClear');
+      const countEl = document.getElementById('searchCount');
+      const noResults = document.getElementById('noResults');
+
+      clearBtn.classList.toggle('visible', q.length > 0);
+
+      let visible = 0;
+      cards.forEach(card => {
+        const id = card.dataset.id;
+        const article = ARTICLES.find(a => a.id === id);
+        if (!article) return;
+        const text = (article.title + ' ' + article.cat + ' ' + article.keywords).toLowerCase();
+        const match = q === '' || text.includes(q);
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      if (q === '') {
+        countEl.textContent = '';
+        noResults.classList.remove('visible');
+      } else {
+        countEl.textContent = visible + ' artículo' + (visible !== 1 ? 's' : '') + ' encontrado' + (visible !== 1 ? 's' : '');
+        noResults.classList.toggle('visible', visible === 0);
+      }
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      handleSearch('');
+      input.focus();
+    }
+
+    function focusSearch() {
+      navigate('home');
+      setTimeout(() => {
+        const input = document.getElementById('searchInput');
+        if (input) {
+          input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          input.focus();
+        }
+      }, 100);
+    }
+
+    // ── INIT ──────────────────────────────────────────────────────────
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const p = params.get('p');
+        if (p && (p.startsWith('article-') || p.startsWith('page-'))) {
+          navigate(p, false);
+        } else {
+          document.getElementById('home').style.display = 'block';
+        }
+      } catch(e) {
+        document.getElementById('home').style.display = 'block';
+      }
+    });
+
+    // Botón atrás del navegador
+    window.addEventListener('popstate', (e) => {
+      try {
+        const target = e.state?.target || 'home';
+        navigate(target, false);
+      } catch(e) {}
+    });
+  </script>
+
+</body>
+</html>
